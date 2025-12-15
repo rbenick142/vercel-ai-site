@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nexus - Initialize Audit Protocol</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://unpkg.com/lucide@latest"></script>
+<script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&amp;family=Manrope:wght@300;400;500;600&amp;family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&amp;display=swap" rel="stylesheet">
+<style>
+body {
+font-family: 'Inter', sans-serif;
+background-color: #020202;
+}
+.font-serif { font-family: 'Newsreader', serif; }
+.font-manrope { font-family: 'Manrope', sans-serif; }
+.font-mono { font-family: 'JetBrains Mono', monospace; }
+/* Flashlight Border Effect */
+.spotlight-card {
+position: relative;
+border-radius: 4px;
+background-color: rgba(255, 255, 255, 0.02);
+overflow: hidden;
+--mouse-x: 0px;
+--mouse-y: 0px;
+}
+.spotlight-card::before {
+content: "";
+position: absolute;
+inset: 0;
+border-radius: inherit;
+padding: 1px;
+background: radial-gradient(
+800px circle at var(--mouse-x) var(--mouse-y),
+rgba(255, 255, 255, 0.4),
+transparent 40%
+);
+-webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+-webkit-mask-composite: xor;
+mask-composite: exclude;
+opacity: 0;
+transition: opacity 0.5s ease;
+pointer-events: none;
+z-index: 2;
+}
+.spotlight-card::after {
+content: "";
+position: absolute;
+inset: 0;
+border-radius: inherit;
+padding: 1px;
+background: linear-gradient(225deg, rgba(255,255,255,0.05), rgba(255,255,255,0.01));
+-webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+-webkit-mask-composite: xor;
+mask-composite: exclude;
+pointer-events: none;
+z-index: 1;
+}
+.spotlight-card:hover::before {
+opacity: 1;
+}
+@keyframes animationIn {
+0% { opacity: 0; transform: translateY(20px); filter: blur(4px); }
+100% { opacity: 1; transform: translateY(0); filter: blur(0px); }
+}
+.animate-on-scroll { animation-play-state: paused !important; }
+.animate-on-scroll.animate { animation-play-state: running !important; }
+@keyframes scroll {
+0% { transform: translateX(0); }
+100% { transform: translateX(-50%); }
+}
+.animate-scroll {
+animation: scroll 40s linear infinite;
+}
+@keyframes beam-drop {
+0% { top: -100px; opacity: 0; }
+20% { opacity: 1; }
+80% { opacity: 1; }
+100% { top: 100%; opacity: 0; }
+}
+.beam {
+position: absolute;
+width: 1px;
+height: 150px;
+background: linear-gradient(to bottom, transparent, rgba(255,255,255,0.5), transparent);
+animation: beam-drop 7s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+.beam-delay-1 { animation-delay: 2s; }
+.beam-delay-2 { animation-delay: 4s; }
+/* Custom Checkbox */
+.custom-checkbox input:checked + div {
+background-color: #6366f1;
+border-color: #6366f1;
+}
+.custom-checkbox input:checked + div svg {
+display: block;
+}
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: #000; }
+::-webkit-scrollbar-thumb { background: #333; border-radius: 2px; }
+</style>
+<link id="all-fonts-link-font-newsreader" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400..800&amp;display=swap"><style id="all-fonts-style-font-newsreader">.font-newsreader { font-family: 'Newsreader', serif !important; }</style><link id="all-fonts-link-font-geist" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&amp;display=swap"><style id="all-fonts-style-font-geist">.font-geist { font-family: 'Geist', sans-serif !important; }</style><link id="all-fonts-link-font-roboto" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600;700&amp;display=swap"><style id="all-fonts-style-font-roboto">.font-roboto { font-family: 'Roboto', sans-serif !important; }</style><link id="all-fonts-link-font-montserrat" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&amp;display=swap"><style id="all-fonts-style-font-montserrat">.font-montserrat { font-family: 'Montserrat', sans-serif !important; }</style><link id="all-fonts-link-font-poppins" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&amp;display=swap"><style id="all-fonts-style-font-poppins">.font-poppins { font-family: 'Poppins', sans-serif !important; }</style><link id="all-fonts-link-font-playfair" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;900&amp;display=swap"><style id="all-fonts-style-font-playfair">.font-playfair { font-family: 'Playfair Display', serif !important; }</style><link id="all-fonts-link-font-instrument-serif" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:wght@400;500;600;700&amp;display=swap"><style id="all-fonts-style-font-instrument-serif">.font-instrument-serif { font-family: 'Instrument Serif', serif !important; }</style><link id="all-fonts-link-font-merriweather" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700;900&amp;display=swap"><style id="all-fonts-style-font-merriweather">.font-merriweather { font-family: 'Merriweather', serif !important; }</style><link id="all-fonts-link-font-bricolage" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@300;400;500;600;700&amp;display=swap"><style id="all-fonts-style-font-bricolage">.font-bricolage { font-family: 'Bricolage Grotesque', sans-serif !important; }</style><link id="all-fonts-link-font-jakarta" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&amp;display=swap"><style id="all-fonts-style-font-jakarta">.font-jakarta { font-family: 'Plus Jakarta Sans', sans-serif !important; }</style><link id="all-fonts-link-font-manrope" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&amp;display=swap"><style id="all-fonts-style-font-manrope">.font-manrope { font-family: 'Manrope', sans-serif !important; }</style><link id="all-fonts-link-font-space-grotesk" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap"><style id="all-fonts-style-font-space-grotesk">.font-space-grotesk { font-family: 'Space Grotesk', sans-serif !important; }</style><link id="all-fonts-link-font-work-sans" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500;600;700;800&amp;display=swap"><style id="all-fonts-style-font-work-sans">.font-work-sans { font-family: 'Work Sans', sans-serif !important; }</style><link id="all-fonts-link-font-pt-serif" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=PT+Serif:wght@400;700&amp;display=swap"><style id="all-fonts-style-font-pt-serif">.font-pt-serif { font-family: 'PT Serif', serif !important; }</style><link id="all-fonts-link-font-geist-mono" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@300;400;500;600;700&amp;display=swap"><style id="all-fonts-style-font-geist-mono">.font-geist-mono { font-family: 'Geist Mono', monospace !important; }</style><link id="all-fonts-link-font-space-mono" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&amp;display=swap"><style id="all-fonts-style-font-space-mono">.font-space-mono { font-family: 'Space Mono', monospace !important; }</style><link id="all-fonts-link-font-quicksand" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&amp;display=swap"><style id="all-fonts-style-font-quicksand">.font-quicksand { font-family: 'Quicksand', sans-serif !important; }</style><link id="all-fonts-link-font-nunito" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700;800&amp;display=swap"><style id="all-fonts-style-font-nunito">.font-nunito { font-family: 'Nunito', sans-serif !important; }</style><link id="all-fonts-link-font-google-sans-flex" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Google+Sans+Flex:wght@400;500;600;700&amp;display=swap"><style id="all-fonts-style-font-google-sans-flex">.font-google-sans-flex { font-family: 'Google Sans Flex', sans-serif !important; }</style><link id="all-fonts-link-font-oswald" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&amp;display=swap"><style id="all-fonts-style-font-oswald">.font-oswald { font-family: 'Oswald', sans-serif !important; }</style><link id="all-fonts-link-font-dm-sans" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&amp;display=swap"><style id="all-fonts-style-font-dm-sans">.font-dm-sans { font-family: 'DM Sans', sans-serif !important; }</style></head>
+<body class="bg-[#020202] text-white selection:bg-indigo-500/30 selection:text-indigo-100 overflow-x-hidden">
+
+<!-- Background (component) added by Aura -->
+<div class="aura-background-component fixed top-0 w-full h-screen -z-10 saturate-0 brightness-50 opacity-30" data-alpha-mask="80" style="; mask-image: linear-gradient(to bottom, transparent, black 0%, black 80%, transparent); -webkit-mask-image: linear-gradient(to bottom, transparent, black 0%, black 80%, transparent)"><div class="aura-background-component top-0 w-full -z-10 absolute h-full">
+  <div data-us-project="HzcaAbRLaALMhHJp8gLY" class="absolute w-full h-full left-0 top-0 -z-10"></div>
+  <script type="text/javascript">
+    !function(){if(!window.UnicornStudio){window.UnicornStudio={isInitialized:!1};var i=document.createElement("script");i.src="https://cdn.jsdelivr.net/gh/hiunicornstudio/unicornstudio.js@v1.4.29/dist/unicornStudio.umd.js",i.onload=function(){window.UnicornStudio.isInitialized||(UnicornStudio.init(),window.UnicornStudio.isInitialized=!0)},(document.head || document.body).appendChild(i)}}();
+  </script>
+</div></div>
+
+
+
+
+    <div class="border-x border-white/[0.03] min-h-screen w-full max-w-[1440px] mx-auto relative">
+        
+        <!-- Background Grid -->
+        <div class="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:12rem_24rem] pointer-events-none z-0"></div>
+
+        <!-- Beams -->
+        <div class="absolute inset-0 flex justify-between pointer-events-none z-0 px-6 md:px-12 lg:px-24">
+            <div class="relative w-px h-full bg-white/[0.03] overflow-hidden"><div class="beam"></div></div>
+            <div class="relative w-px h-full bg-white/[0.03] hidden md:block overflow-hidden absolute left-1/2 -translate-x-1/2"><div class="beam beam-delay-1"></div></div>
+            <div class="relative w-px h-full bg-white/[0.03] overflow-hidden"><div class="beam beam-delay-2"></div></div>
+        </div>
+
+        <!-- Navigation -->
+        <nav class="relative z-50 border-b border-white/[0.03] backdrop-blur-sm bg-[#020202]/80">
+            <div class="md:px-12 lg:px-24 flex h-20 pr-6 pl-6 items-center justify-between">
+                <a href="index.html" class="flex items-center gap-3 [animation:animationIn_0.8s_ease-out_0s_both] animate-on-scroll animate">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="cpu" class="lucide lucide-cpu w-6 h-6 text-white stroke-[1.5]"><path d="M12 20v2"></path><path d="M12 2v2"></path><path d="M17 20v2"></path><path d="M17 2v2"></path><path d="M2 12h2"></path><path d="M2 17h2"></path><path d="M2 7h2"></path><path d="M20 12h2"></path><path d="M20 17h2"></path><path d="M20 7h2"></path><path d="M7 20v2"></path><path d="M7 2v2"></path><rect x="4" y="4" width="16" height="16" rx="2"></rect><rect x="8" y="8" width="8" height="8" rx="1"></rect></svg>
+                    <span class="text-xs font-semibold tracking-[0.15em] uppercase text-white font-sans" style="">Nexus AI</span>
+                </a>
+
+                <div class="hidden md:flex items-center gap-10 [animation:animationIn_0.8s_ease-out_0.1s_both] animate-on-scroll animate">
+                    <a href="services.html" class="text-[13px] hover:text-white transition-colors text-white/60">Services</a>
+                    <a href="case-studies.html" class="text-[13px] hover:text-white transition-colors text-white/60">Case Studies</a>
+                    <a href="careers.html" class="text-[13px] hover:text-white transition-colors text-white/60">Careers</a>
+                </div>
+
+                <div class="flex items-center gap-6 [animation:animationIn_0.8s_ease-out_0.2s_both] animate-on-scroll animate">
+                    <a href="login.html" class="text-[13px] hover:text-white transition-colors hidden sm:block text-white/60">Client Login</a>
+                    <button class="group inline-flex overflow-hidden transition-all duration-300 hover:-translate-y-0.5 rounded-sm pt-[1px] pr-[1px] pb-[1px] pl-[1px] relative items-center justify-center" onclick="window.location.href='audit.html'" role="button">
+                        <span class="absolute inset-[-100%] animate-[spin_3s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,transparent_0%,transparent_75%,#ffffff_100%)] opacity-0 transition-opacity duration-300 group-hover:opacity-100"></span>
+                        <span class="absolute inset-0 rounded-sm bg-zinc-800 transition-opacity duration-300 group-hover:opacity-0"></span>
+                        <span class="flex items-center justify-center gap-2 transition-colors duration-300 group-hover:text-white text-[11px] font-medium text-zinc-300 tracking-tight bg-black w-full h-full rounded-sm pt-2 pr-4 pb-2 pl-4 relative">
+                            <span class="relative z-10 uppercase tracking-widest font-sans" style="">Audit Request</span>
+                        </span>
+                    </button>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="z-10 relative">
+            
+            <section class="md:px-12 lg:px-24 pt-20 pb-24 grid lg:grid-cols-12 gap-12 border-white/[0.03] px-6">
+                
+                <!-- Left Column: Context & Information -->
+                <div class="lg:col-span-5 flex flex-col gap-10 [animation:animationIn_0.8s_ease-out_0.1s_both] animate-on-scroll animate sticky top-32 self-start">
+                    
+                    <div>
+                        <div class="inline-flex items-center gap-2 mb-6 border border-white/10 rounded-full px-3 py-1 bg-white/[0.02]">
+                            <div class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></div>
+                            <span class="text-[10px] tracking-[0.2em] uppercase text-white/60 font-medium font-sans">Intake Open</span>
+                        </div>
+                        <h1 class="font-serif text-4xl sm:text-5xl lg:text-6xl leading-[0.95] text-white tracking-tight mb-6">
+                            <span class="block text-white/80 font-newsreader font-light">Initialize System</span>
+                            <span class="block font-light italic font-newsreader">Diagnostic Audit.</span>
+                        </h1>
+                        <p class="text-white/50 leading-relaxed font-sans max-w-md font-light text-sm">
+                            Submit your infrastructure details for a preliminary vector readiness assessment. Our neural architecture team reviews all requests within 24 hours.
+                        </p>
+                    </div>
+
+                    <!-- Terminal / Audit Scope Display -->
+                    <div class="border border-white/10 bg-[#050505] rounded-sm p-6 relative overflow-hidden group">
+                        <div class="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-indigo-500/50 to-transparent"></div>
+                        
+                        <div class="flex items-center gap-2 mb-4 border-b border-white/5 pb-2">
+                            <iconify-icon icon="solar:terminal-linear" class="text-white/40" width="16"></iconify-icon>
+                            <span class="text-[10px] font-mono text-white/40 uppercase tracking-widest font-sans">scope_v1.0.sh</span>
+                        </div>
+
+                        <ul class="space-y-3">
+                            <li class="flex items-start gap-3">
+                                <iconify-icon icon="solar:check-circle-linear" class="text-indigo-400 mt-0.5" width="16"></iconify-icon>
+                                <div>
+                                    <div class="text-[12px] text-white font-medium font-sans">RAG Efficiency Analysis</div>
+                                    <div class="text-[10px] text-white/40 font-mono mt-0.5 font-sans">Latency &gt; 12ms check</div>
+                                </div>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <iconify-icon icon="solar:check-circle-linear" class="text-indigo-400 mt-0.5" width="16"></iconify-icon>
+                                <div>
+                                    <div class="text-[12px] text-white font-medium font-sans">Vector Embedding Audit</div>
+                                    <div class="text-[10px] text-white/40 font-mono mt-0.5 font-sans">Dimensionality consistency</div>
+                                </div>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <iconify-icon icon="solar:check-circle-linear" class="text-indigo-400 mt-0.5" width="16"></iconify-icon>
+                                <div>
+                                    <div class="text-[12px] text-white font-medium font-sans">Security Protocol Stress</div>
+                                    <div class="text-[10px] text-white/40 font-mono mt-0.5 font-sans">PII masking / SOC2 compliance</div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Contact Info -->
+                    <div class="flex items-center gap-8 pt-4 border-t border-white/5">
+                        <div class="flex items-center gap-3">
+                             <div class="w-8 h-8 rounded-full border border-white/10 flex items-center justify-center bg-white/5 text-white/60">
+                                <iconify-icon icon="solar:letter-linear" width="14"></iconify-icon>
+                             </div>
+                             <div class="flex flex-col">
+                                 <span class="text-[10px] uppercase tracking-widest text-white/40 font-sans">Email Support</span>
+                                 <span class="text-sm text-white font-mono font-sans">secure@nexus.ai</span>
+                             </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Column: The Form -->
+                <div class="lg:col-span-7 [animation:animationIn_0.8s_ease-out_0.2s_both] animate-on-scroll animate">
+                    <div class="spotlight-card rounded-sm border border-white/5 bg-white/[0.01] p-8 md:p-12 relative overflow-hidden" style="--mouse-x: -9.1640625px; --mouse-y: -71px;">
+                        
+                        <!-- Form Header -->
+                        <div class="flex justify-between items-start mb-8">
+                            <div class="text-[11px] font-mono text-indigo-400 font-sans">[SECURE_TRANSMISSION]</div>
+                            <div class="text-[11px] font-mono text-zinc-600 font-sans">ID: #Req-9982</div>
+                        </div>
+
+                        <form class="space-y-8">
+                            <!-- Contact Section -->
+                            <div class="space-y-6">
+                                <div class="grid md:grid-cols-2 gap-6">
+                                    <div class="space-y-2">
+                                        <label for="name" class="text-[10px] uppercase tracking-[0.15em] text-zinc-500 font-medium font-sans">Full Name</label>
+                                        <input type="text" id="name" class="w-full bg-zinc-900/50 border border-white/10 rounded-sm px-4 py-3 text-sm text-white focus:outline-none focus:border-indigo-500/50 focus:bg-zinc-900 transition-all font-sans placeholder:text-white/10" placeholder="Enter name">
+                                    </div>
+                                    <div class="space-y-2">
+                                        <label for="email" class="text-[10px] uppercase tracking-[0.15em] text-zinc-500 font-medium font-sans">Work Email</label>
+                                        <input type="email" id="email" class="w-full bg-zinc-900/50 border border-white/10 rounded-sm px-4 py-3 text-sm text-white focus:outline-none focus:border-indigo-500/50 focus:bg-zinc-900 transition-all font-sans placeholder:text-white/10" placeholder="name@company.com">
+                                    </div>
+                                </div>
+                                
+                                <div class="space-y-2">
+                                    <label for="company" class="text-[10px] uppercase tracking-[0.15em] text-zinc-500 font-medium font-sans">Company / Organization</label>
+                                    <div class="relative">
+                                        <input type="text" id="company" class="w-full bg-zinc-900/50 border border-white/10 rounded-sm px-4 py-3 text-sm text-white focus:outline-none focus:border-indigo-500/50 focus:bg-zinc-900 transition-all font-sans placeholder:text-white/10 pl-10" placeholder="Nexus Intelligence Inc.">
+                                        <iconify-icon icon="solar:buildings-2-linear" class="absolute left-3.5 top-3.5 text-white/20" width="16"></iconify-icon>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="w-full h-px bg-white/5"></div>
+
+                            <!-- Technical Details -->
+                            <div class="space-y-6">
+                                <h3 class="text-white font-newsreader italic text-xl font-light">Infrastructure Details</h3>
+                                
+                                <div class="grid md:grid-cols-2 gap-6">
+                                    <div class="space-y-2">
+                                        <label for="stack" class="text-[10px] uppercase tracking-[0.15em] text-zinc-500 font-medium font-sans">Current Data Stack</label>
+                                        <div class="relative">
+                                            <select id="stack" class="w-full bg-zinc-900/50 border border-white/10 rounded-sm px-4 py-3 text-sm text-white focus:outline-none focus:border-indigo-500/50 focus:bg-zinc-900 transition-all font-sans appearance-none text-white/70">
+                                                <option>PostgreSQL / SQL</option>
+                                                <option>Pinecone / Weaviate</option>
+                                                <option>MongoDB / NoSQL</option>
+                                                <option>Legacy Infrastructure</option>
+                                            </select>
+                                            <iconify-icon icon="solar:alt-arrow-down-linear" class="absolute right-4 top-3.5 text-white/20 pointer-events-none" width="16"></iconify-icon>
+                                        </div>
+                                    </div>
+                                    <div class="space-y-2">
+                                        <label for="volume" class="text-[10px] uppercase tracking-[0.15em] text-zinc-500 font-medium font-sans">Est. Data Volume</label>
+                                        <div class="relative">
+                                            <select id="volume" class="w-full bg-zinc-900/50 border border-white/10 rounded-sm px-4 py-3 text-sm text-white focus:outline-none focus:border-indigo-500/50 focus:bg-zinc-900 transition-all font-sans appearance-none text-white/70">
+                                                <option>&lt; 1 Million Records</option>
+                                                <option>1M - 10M Records</option>
+                                                <option>10M - 100M Records</option>
+                                                <option>&gt; 100M Records (Enterprise)</option>
+                                            </select>
+                                            <iconify-icon icon="solar:alt-arrow-down-linear" class="absolute right-4 top-3.5 text-white/20 pointer-events-none" width="16"></iconify-icon>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="space-y-3">
+                                    <label class="text-[10px] uppercase tracking-[0.15em] text-zinc-500 font-medium font-sans">Primary Audit Focus</label>
+                                    <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+                                        <label class="custom-checkbox flex items-center gap-3 p-3 rounded-sm border border-white/5 bg-zinc-900/20 cursor-pointer hover:bg-zinc-900/40 transition-colors">
+                                            <input type="checkbox" class="hidden">
+                                            <div class="w-4 h-4 rounded-sm border border-white/20 flex items-center justify-center transition-colors bg-black">
+                                                <svg class="w-2.5 h-2.5 text-white hidden pointer-events-none" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
+                                            </div>
+                                            <span class="text-sm text-white/80 font-sans">Query Latency Optimization</span>
+                                        </label>
+                                        <label class="custom-checkbox flex items-center gap-3 p-3 rounded-sm border border-white/5 bg-zinc-900/20 cursor-pointer hover:bg-zinc-900/40 transition-colors">
+                                            <input type="checkbox" class="hidden">
+                                            <div class="w-4 h-4 rounded-sm border border-white/20 flex items-center justify-center transition-colors bg-black">
+                                                <svg class="w-2.5 h-2.5 text-white hidden pointer-events-none" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
+                                            </div>
+                                            <span class="text-sm text-white/80 font-sans">Model Context Window</span>
+                                        </label>
+                                        <label class="custom-checkbox flex items-center gap-3 p-3 rounded-sm border border-white/5 bg-zinc-900/20 cursor-pointer hover:bg-zinc-900/40 transition-colors">
+                                            <input type="checkbox" class="hidden">
+                                            <div class="w-4 h-4 rounded-sm border border-white/20 flex items-center justify-center transition-colors bg-black">
+                                                <svg class="w-2.5 h-2.5 text-white hidden pointer-events-none" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
+                                            </div>
+                                            <span class="text-sm text-white/80 font-sans">Data Sovereignty &amp; Security</span>
+                                        </label>
+                                        <label class="custom-checkbox flex items-center gap-3 p-3 rounded-sm border border-white/5 bg-zinc-900/20 cursor-pointer hover:bg-zinc-900/40 transition-colors">
+                                            <input type="checkbox" class="hidden">
+                                            <div class="w-4 h-4 rounded-sm border border-white/20 flex items-center justify-center transition-colors bg-black">
+                                                <svg class="w-2.5 h-2.5 text-white hidden pointer-events-none" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
+                                            </div>
+                                            <span class="text-sm text-white/80 font-sans">Implementation Cost Analysis</span>
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <div class="space-y-2">
+                                    <label for="message" class="text-[10px] uppercase tracking-[0.15em] text-zinc-500 font-medium font-sans">Additional Context (Optional)</label>
+                                    <textarea id="message" rows="4" class="w-full bg-zinc-900/50 border border-white/10 rounded-sm px-4 py-3 text-sm text-white focus:outline-none focus:border-indigo-500/50 focus:bg-zinc-900 transition-all font-sans placeholder:text-white/10 resize-none" placeholder="Describe your current architectural bottlenecks..."></textarea>
+                                </div>
+                            </div>
+
+                            <!-- Submit Action -->
+                            <div class="pt-4 flex flex-col md:flex-row items-center justify-between gap-6">
+                                <div class="text-[10px] text-zinc-500 max-w-xs font-sans">
+                                    By submitting, you agree to our <a href="#" class="text-white/40 hover:text-white underline decoration-white/20">NDA</a> and data processing terms.
+                                </div>
+                                <button type="submit" class="w-full md:w-auto group shadow-indigo-500/20 hover:shadow-indigo-500/40 transition-all duration-300 overflow-hidden font-medium text-indigo-950 bg-gradient-to-r from-[#e0e7ff] to-[#a5b4fc] rounded-sm pt-3 pr-10 pb-3 pl-10 relative shadow-lg" style="box-shadow:0 15px 33px -12px rgba(99,102,241,0.6), inset 0 4px 6.3px rgba(255,255,255,0.8);">
+                                    <div class="group-hover:translate-y-0 transition-transform duration-300 bg-white/40 absolute top-0 right-0 bottom-0 left-0 translate-y-full"></div>
+                                    <span class="relative flex items-center justify-center gap-2 text-sm tracking-tight font-semibold font-sans">
+                                        Initialize Request
+                                        <iconify-icon icon="solar:arrow-right-linear" width="16" class="stroke-2"></iconify-icon>
+                                    </span>
+                                </button>
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Mini Trust Section -->
+            <section class="border-t border-b border-white/[0.03] bg-[#050505] py-12 relative overflow-hidden">
+                 <div class="max-w-[1440px] mx-auto px-6 md:px-12 lg:px-24 flex flex-col md:flex-row items-center justify-between gap-8">
+                    <div class="text-sm font-newsreader italic text-white/40">Trusted by engineering teams at</div>
+                    <div class="flex items-center gap-12 opacity-40 grayscale hover:grayscale-0 transition-all duration-500">
+                         <iconify-icon icon="simple-icons:openai" class="text-white" width="24"></iconify-icon>
+                         <iconify-icon icon="simple-icons:vercel" class="text-white" width="24"></iconify-icon>
+                         <iconify-icon icon="simple-icons:linear" class="text-white" width="24"></iconify-icon>
+                         <iconify-icon icon="simple-icons:stripe" class="text-white" width="32"></iconify-icon>
+                    </div>
+                 </div>
+            </section>
+
+            <footer class="relative bg-[#050505] border-t border-white/[0.03] overflow-hidden">
+    
+    <!-- Vertical Background Lines (4 Column Grid) -->
+    <div class="absolute inset-0 max-w-[1440px] mx-auto px-6 md:px-12 lg:px-24 pointer-events-none flex justify-between z-0">
+        <div class="w-px h-full bg-white/[0.03]"></div>
+        <div class="hidden lg:block w-px h-full bg-white/[0.03] absolute left-[25%]"></div>
+        <div class="hidden md:block w-px h-full bg-white/[0.03] absolute left-1/2 -translate-x-1/2"></div>
+        <div class="hidden lg:block w-px h-full bg-white/[0.03] absolute left-[75%]"></div>
+        <div class="w-px h-full bg-white/[0.03]"></div>
+    </div>
+
+    <!-- Top Highlight Gradient (Chip Effect) -->
+    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-96 h-px bg-gradient-to-r from-transparent via-indigo-500/50 to-transparent shadow-[0_0_15px_rgba(99,102,241,0.5)] z-20"></div>
+
+    <div class="relative z-10 max-w-[1440px] mx-auto px-6 md:px-12 lg:px-24">
+        
+        <!-- Social Connections Row -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 border-b border-white/[0.03]">
+            
+            <!-- Facebook -->
+            <a href="#" class="group relative py-8 lg:pr-8 flex items-center justify-between border-b md:border-b-0 md:border-r border-white/[0.03] hover:bg-white/[0.02] transition-all duration-500">
+                <div class="flex items-center gap-4">
+                    <iconify-icon icon="simple-icons:facebook" class="text-white/40 group-hover:text-[#1877F2] transition-colors duration-300" width="20"></iconify-icon>
+                    <span class="text-sm font-medium text-white/60 group-hover:text-white transition-colors font-sans">Facebook</span>
+                </div>
+                <div class="w-8 h-8 rounded-full border border-white/5 flex items-center justify-center bg-white/[0.02] group-hover:bg-white/10 transition-colors">
+                    <iconify-icon icon="solar:arrow-right-up-linear" class="text-white/40 group-hover:text-white transition-colors" width="16"></iconify-icon>
+                </div>
+            </a>
+
+            <!-- X / Twitter -->
+            <a href="#" class="group relative py-8 lg:px-8 flex items-center justify-between border-b md:border-b-0 lg:border-r border-white/[0.03] hover:bg-white/[0.02] transition-all duration-500">
+                <div class="flex items-center gap-4">
+                    <iconify-icon icon="simple-icons:x" class="text-white/40 group-hover:text-white transition-colors duration-300" width="18"></iconify-icon>
+                    <span class="text-sm font-medium text-white/60 group-hover:text-white transition-colors font-sans">Twitter</span>
+                </div>
+                <div class="w-8 h-8 rounded-full border border-white/5 flex items-center justify-center bg-white/[0.02] group-hover:bg-white/10 transition-colors">
+                    <iconify-icon icon="solar:arrow-right-up-linear" class="text-white/40 group-hover:text-white transition-colors" width="16"></iconify-icon>
+                </div>
+            </a>
+
+            <!-- Youtube -->
+            <a href="#" class="group relative py-8 lg:px-8 flex items-center justify-between border-b md:border-b-0 md:border-r border-white/[0.03] hover:bg-white/[0.02] transition-all duration-500">
+                <div class="flex items-center gap-4">
+                    <iconify-icon icon="simple-icons:youtube" class="text-white/40 group-hover:text-[#FF0000] transition-colors duration-300" width="20"></iconify-icon>
+                    <span class="text-sm font-medium text-white/60 group-hover:text-white transition-colors font-sans">Youtube</span>
+                </div>
+                <div class="w-8 h-8 rounded-full border border-white/5 flex items-center justify-center bg-white/[0.02] group-hover:bg-white/10 transition-colors">
+                    <iconify-icon icon="solar:arrow-right-up-linear" class="text-white/40 group-hover:text-white transition-colors" width="16"></iconify-icon>
+                </div>
+            </a>
+
+            <!-- Instagram -->
+            <a href="#" class="group relative py-8 lg:pl-8 flex items-center justify-between hover:bg-white/[0.02] transition-all duration-500">
+                <div class="flex items-center gap-4">
+                    <iconify-icon icon="simple-icons:instagram" class="text-white/40 group-hover:text-[#E4405F] transition-colors duration-300" width="20"></iconify-icon>
+                    <span class="text-sm font-medium text-white/60 group-hover:text-white transition-colors font-sans">Instagram</span>
+                </div>
+                <div class="w-8 h-8 rounded-full border border-white/5 flex items-center justify-center bg-white/[0.02] group-hover:bg-white/10 transition-colors">
+                    <iconify-icon icon="solar:arrow-right-up-linear" class="text-white/40 group-hover:text-white transition-colors" width="16"></iconify-icon>
+                </div>
+            </a>
+
+        </div>
+
+        <!-- Footer Links Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 pt-16 pb-24">
+            
+            <!-- Column 01 -->
+            <div class="flex flex-col gap-8 lg:pr-8 border-r-0 md:border-r border-white/[0.03] border-b md:border-b-0 pb-12 md:pb-0">
+                <div class="flex flex-col gap-2">
+                    <span class="font-mono text-[10px] text-zinc-600 tracking-widest font-sans">01</span>
+                    <h4 class="font-sans text-xs font-semibold tracking-[0.2em] text-white uppercase">About Us</h4>
+                </div>
+                <ul class="flex flex-col gap-4">
+                    <li><a href="#" class="text-[13px] text-white/40 hover:text-white transition-colors duration-300 font-sans">Pricing Methodology</a></li>
+                    <li><a href="#" class="text-[13px] text-white/40 hover:text-white transition-colors duration-300 font-sans">Contact Sales</a></li>
+                    <li><a href="#" class="text-[13px] text-white/40 hover:text-white transition-colors duration-300 font-sans">Documentation</a></li>
+                    
+                </ul>
+            </div>
+
+            <!-- Column 02 -->
+            <div class="flex flex-col gap-8 md:pl-8 lg:px-8 border-r-0 lg:border-r border-white/[0.03] border-b md:border-b-0 py-12 md:py-0">
+                <div class="flex flex-col gap-2">
+                    <span class="font-mono text-[10px] text-zinc-600 tracking-widest font-sans">02</span>
+                    <h4 class="font-sans text-xs font-semibold tracking-[0.2em] text-white uppercase">Support</h4>
+                </div>
+                <ul class="flex flex-col gap-4">
+                    <li><a href="#" class="text-[13px] text-white/40 hover:text-white transition-colors duration-300 font-sans">Help Center</a></li>
+                    <li><a href="#" class="text-[13px] text-white/40 hover:text-white transition-colors duration-300 font-sans">API Status</a></li>
+                    <li><a href="#" class="text-[13px] text-white/40 hover:text-white transition-colors duration-300 font-sans">Report Issue</a></li>
+                    
+                </ul>
+            </div>
+
+            <!-- Column 03 -->
+            <div class="flex flex-col gap-8 lg:px-8 border-r-0 md:border-r border-white/[0.03] border-b md:border-b-0 py-12 md:py-0">
+                <div class="flex flex-col gap-2">
+                    <span class="font-mono text-[10px] text-zinc-600 tracking-widest font-sans">03</span>
+                    <h4 class="font-sans text-xs font-semibold tracking-[0.2em] text-white uppercase">Community</h4>
+                </div>
+                <ul class="flex flex-col gap-4">
+                    <li><a href="#" class="text-[13px] text-white/40 hover:text-white transition-colors duration-300 font-sans">Developer Forum</a></li>
+                    <li><a href="#" class="text-[13px] text-white/40 hover:text-white transition-colors duration-300 font-sans">Events &amp; Hackathons</a></li>
+                    <li><a href="#" class="text-[13px] text-white/40 hover:text-white transition-colors duration-300 font-sans">Partner Program</a></li>
+                    
+                </ul>
+            </div>
+
+            <!-- Column 04 -->
+            <div class="flex flex-col gap-8 md:pl-8 lg:pl-8 py-12 md:py-0">
+                <div class="flex flex-col gap-2">
+                    <span class="font-mono text-[10px] text-zinc-600 tracking-widest font-sans">04</span>
+                    <h4 class="font-sans text-xs font-semibold tracking-[0.2em] text-white uppercase">Legal</h4>
+                </div>
+                <ul class="flex flex-col gap-4">
+                    <li><a href="#" class="text-[13px] text-white/40 hover:text-white transition-colors duration-300 font-sans">Investor Relations</a></li>
+                    <li><a href="#" class="text-[13px] text-white/40 hover:text-white transition-colors duration-300 font-sans">Terms of Service</a></li>
+                    <li><a href="#" class="text-[13px] text-white/40 hover:text-white transition-colors duration-300 font-sans">Privacy Policy</a></li>
+                    
+                </ul>
+            </div>
+
+        </div>
+
+        <!-- Bottom Copyright -->
+        <div class="flex flex-col md:flex-row justify-between items-center gap-6 py-12 border-t border-white/[0.03]">
+            <div class="flex items-center gap-3">
+                <div class="w-6 h-6 bg-white/[0.05] rounded-sm flex items-center justify-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-cpu w-3 h-3 text-white/60"><path d="M12 20v2"></path><path d="M12 2v2"></path><path d="M17 20v2"></path><path d="M17 2v2"></path><path d="M2 12h2"></path><path d="M2 17h2"></path><path d="M2 7h2"></path><path d="M20 12h2"></path><path d="M20 17h2"></path><path d="M20 7h2"></path><path d="M7 20v2"></path><path d="M7 2v2"></path><rect x="4" y="4" width="16" height="16" rx="2"></rect><rect x="8" y="8" width="8" height="8" rx="1"></rect></svg>
+                </div>
+                <span class="text-[11px] text-white/30 font-sans">© 2025 NEXUS INTELLIGENCE INC.</span>
+            </div>
+            <div class="flex items-center gap-6">
+                <div class="flex items-center gap-2">
+                    <div class="w-1.5 h-1.5 rounded-full bg-emerald-500 shadow-[0_0_10px_rgba(16,185,129,0.5)]"></div>
+                    <span class="text-[11px] text-emerald-500/80 font-mono font-sans">ALL SYSTEMS OPERATIONAL</span>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</footer>
+
+        </main>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            lucide.createIcons();
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("animate");
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.1, rootMargin: "0px 0px -5% 0px" });
+
+            document.querySelectorAll(".animate-on-scroll").forEach((el) => {
+                observer.observe(el);
+            });
+
+            const cards = document.querySelectorAll(".spotlight-card");
+            document.addEventListener("mousemove", (e) => {
+                cards.forEach(card => {
+                    const rect = card.getBoundingClientRect();
+                    const x = e.clientX - rect.left;
+                    const y = e.clientY - rect.top;
+                    card.style.setProperty("--mouse-x", `${x}px`);
+                    card.style.setProperty("--mouse-y", `${y}px`);
+                });
+            });
+        });
+    </script>
+</body></html>

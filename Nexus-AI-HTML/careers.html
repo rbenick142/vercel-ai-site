@@ -1,0 +1,893 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Careers at Nexus - Join the Frontier</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://unpkg.com/lucide@latest"></script>
+<script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&amp;family=Manrope:wght@300;400;500;600&amp;family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&amp;display=swap" rel="stylesheet">
+<style>
+body {
+font-family: 'Inter', sans-serif;
+background-color: #020202;
+}
+.font-serif { font-family: 'Newsreader', serif; }
+.font-manrope { font-family: 'Manrope', sans-serif; }
+.font-mono { font-family: 'JetBrains Mono', monospace; }
+/* Flashlight Border Effect */
+.spotlight-card {
+position: relative;
+border-radius: 4px;
+background-color: rgba(255, 255, 255, 0.02);
+overflow: hidden;
+--mouse-x: 0px;
+--mouse-y: 0px;
+}
+.spotlight-card::before {
+content: "";
+position: absolute;
+inset: 0;
+border-radius: inherit;
+padding: 1px;
+background: radial-gradient(
+800px circle at var(--mouse-x) var(--mouse-y),
+rgba(255, 255, 255, 0.4),
+transparent 40%
+);
+-webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+-webkit-mask-composite: xor;
+mask-composite: exclude;
+opacity: 0;
+transition: opacity 0.5s ease;
+pointer-events: none;
+z-index: 2;
+}
+.spotlight-card::after {
+content: "";
+position: absolute;
+inset: 0;
+border-radius: inherit;
+padding: 1px;
+background: linear-gradient(225deg, rgba(255,255,255,0.05), rgba(255,255,255,0.01));
+-webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+-webkit-mask-composite: xor;
+mask-composite: exclude;
+pointer-events: none;
+z-index: 1;
+}
+.spotlight-card:hover::before {
+opacity: 1;
+}
+@keyframes animationIn {
+0% { opacity: 0; transform: translateY(20px); filter: blur(4px); }
+100% { opacity: 1; transform: translateY(0); filter: blur(0px); }
+}
+.animate-on-scroll { animation-play-state: paused !important; }
+.animate-on-scroll.animate { animation-play-state: running !important; }
+@keyframes scroll {
+0% { transform: translateX(0); }
+100% { transform: translateX(-50%); }
+}
+.animate-scroll {
+animation: scroll 40s linear infinite;
+}
+@keyframes beam-drop {
+0% { top: -100px; opacity: 0; }
+20% { opacity: 1; }
+80% { opacity: 1; }
+100% { top: 100%; opacity: 0; }
+}
+.beam {
+position: absolute;
+width: 1px;
+height: 150px;
+background: linear-gradient(to bottom, transparent, rgba(255,255,255,0.5), transparent);
+animation: beam-drop 7s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+.beam-delay-1 { animation-delay: 2s; }
+.beam-delay-2 { animation-delay: 4s; }
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: #000; }
+::-webkit-scrollbar-thumb { background: #333; border-radius: 2px; }
+</style>
+<meta name="disabled-font-classes" content="font-geist,font-roboto,font-montserrat,font-poppins,font-playfair,font-instrument-serif,font-merriweather,font-bricolage,font-jakarta,font-manrope,font-space-grotesk,font-work-sans,font-pt-serif,font-geist-mono,font-space-mono,font-quicksand,font-nunito,font-oswald,font-dm-sans,font-google-sans-flex">
+<style id="aura-editor-visibility-style">
+.invisible { visibility: hidden !important; }
+</style>
+<link id="all-fonts-link-font-newsreader" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400..800&amp;display=swap"><style id="all-fonts-style-font-newsreader">.font-newsreader { font-family: 'Newsreader', serif !important; }</style></head>
+<body class="selection:bg-indigo-500/30 selection:text-indigo-100 overflow-x-hidden text-white bg-[#020202]">
+
+
+
+
+<!-- Background (component) added by Aura -->
+<div class="aura-background-component -z-10 w-full top-0 h-[1200px] absolute saturate-0" data-alpha-mask="80" style="mask-image: linear-gradient(180deg, transparent, black 0%, black 80%, transparent); -webkit-mask-image: linear-gradient(180deg, transparent, black 0%, black 80%, transparent);"><div class="aura-background-component top-0 w-full -z-10 absolute h-full">
+  <div data-us-project="NMlvqnkICwYYJ6lYb064" class="absolute w-full h-full left-0 top-0 -z-10"></div>
+  <script type="text/javascript">
+    !function(){if(!window.UnicornStudio){window.UnicornStudio={isInitialized:!1};var i=document.createElement("script");i.src="https://cdn.jsdelivr.net/gh/hiunicornstudio/unicornstudio.js@v1.4.29/dist/unicornStudio.umd.js",i.onload=function(){window.UnicornStudio.isInitialized||(UnicornStudio.init(),window.UnicornStudio.isInitialized=!0)},(document.head || document.body).appendChild(i)}}();
+  </script>
+</div></div>
+
+    <div class="border-x border-white/[0.03] min-h-screen w-full max-w-[1440px] mx-auto relative">
+        
+        <!-- Background Grid -->
+        <div class="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:12rem_24rem] pointer-events-none z-0"></div>
+
+        <!-- Beams -->
+        <div class="absolute inset-0 flex justify-between pointer-events-none z-0 px-6 md:px-12 lg:px-24">
+            <div class="relative w-px h-full bg-white/[0.03] overflow-hidden"><div class="beam"></div></div>
+            <div class="relative w-px h-full bg-white/[0.03] hidden md:block overflow-hidden absolute left-1/2 -translate-x-1/2"><div class="beam beam-delay-1"></div></div>
+            <div class="relative w-px h-full bg-white/[0.03] overflow-hidden"><div class="beam beam-delay-2"></div></div>
+        </div>
+
+        <!-- Navigation -->
+        <nav class="relative z-50 border-b border-white/[0.03] backdrop-blur-sm bg-[#020202]/80">
+            <div class="md:px-12 lg:px-24 flex h-20 pr-6 pl-6 items-center justify-between">
+                <a href="index.html" class="flex items-center gap-3 [animation:animationIn_0.8s_ease-out_0s_both] animate-on-scroll animate">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="cpu" class="lucide lucide-cpu w-6 h-6 text-white stroke-[1.5]"><path d="M12 20v2"></path><path d="M12 2v2"></path><path d="M17 20v2"></path><path d="M17 2v2"></path><path d="M2 12h2"></path><path d="M2 17h2"></path><path d="M2 7h2"></path><path d="M20 12h2"></path><path d="M20 17h2"></path><path d="M20 7h2"></path><path d="M7 20v2"></path><path d="M7 2v2"></path><rect x="4" y="4" width="16" height="16" rx="2"></rect><rect x="8" y="8" width="8" height="8" rx="1"></rect></svg>
+                    <span class="text-xs font-semibold tracking-[0.15em] uppercase text-white font-sans" style="">Nexus AI</span>
+                </a>
+
+                <div class="hidden md:flex items-center gap-10 [animation:animationIn_0.8s_ease-out_0.1s_both] animate-on-scroll animate">
+                    <a href="services.html" class="text-[13px] hover:text-white transition-colors text-white/60">Services</a>
+                    <a href="case-studies.html" class="text-[13px] hover:text-white transition-colors text-white/60">Case Studies</a>
+                    <a href="careers.html" class="text-[13px] hover:text-white transition-colors text-white/60">Careers</a>
+                </div>
+
+                <div class="flex items-center gap-6 [animation:animationIn_0.8s_ease-out_0.2s_both] animate-on-scroll animate">
+                    <a href="login.html" class="text-[13px] hover:text-white transition-colors hidden sm:block text-white/60">Client Login</a>
+                    <button class="group inline-flex overflow-hidden transition-all duration-300 hover:-translate-y-0.5 rounded-sm pt-[1px] pr-[1px] pb-[1px] pl-[1px] relative items-center justify-center" onclick="window.location.href='audit.html'" role="button">
+                        <span class="absolute inset-[-100%] animate-[spin_3s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,transparent_0%,transparent_75%,#ffffff_100%)] opacity-0 transition-opacity duration-300 group-hover:opacity-100"></span>
+                        <span class="absolute inset-0 rounded-sm bg-zinc-800 transition-opacity duration-300 group-hover:opacity-0"></span>
+                        <span class="flex items-center justify-center gap-2 transition-colors duration-300 group-hover:text-white text-[11px] font-medium text-zinc-300 tracking-tight bg-black w-full h-full rounded-sm pt-2 pr-4 pb-2 pl-4 relative">
+                            <span class="relative z-10 uppercase tracking-widest font-sans" style="">Audit Request</span>
+                        </span>
+                    </button>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="z-10 relative">
+            
+            <!-- Hero (Careers) -->
+            <section class="md:px-12 lg:px-24 md:py-32 grid lg:grid-cols-12 gap-12 border-white/[0.03] border-b pt-24 pr-6 pb-24 pl-6 gap-x-12 gap-y-12 items-end">
+                <div class="lg:col-span-8 flex flex-col gap-8">
+                    <div class="[animation:animationIn_0.8s_ease-out_0.1s_both] animate-on-scroll animate">
+                        <span class="inline-flex items-center gap-2 px-3 py-1 rounded-sm border border-emerald-900/40 bg-emerald-900/10 text-[10px] font-medium tracking-widest text-emerald-200/80 uppercase font-sans">
+                            <span class="w-1 h-1 rounded-full bg-emerald-400"></span>
+                            We are Hiring
+                        </span>
+                    </div>
+                    <h1 class="font-serif text-[2.75rem] sm:text-5xl lg:text-7xl leading-[0.95] text-white tracking-tight [animation:animationIn_0.8s_ease-out_0.2s_both] animate-on-scroll animate">
+                        <span class="block text-white/80 font-newsreader font-light">Join the Frontier</span>
+                        <span class="block font-light italic font-newsreader">of Machine Intelligence.</span>
+                    </h1>
+                    <p class="text-lg md:text-xl text-white/50 max-w-xl leading-relaxed font-light [animation:animationIn_0.8s_ease-out_0.3s_both] animate-on-scroll animate font-sans">
+                        We are looking for the outliers, the polymaths, and the obsessed. Help us build the neural substrate for the next generation of industry.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-5 pt-4 [animation:animationIn_0.8s_ease-out_0.5s_both] animate-on-scroll animate">
+                        <button class="group shadow-indigo-500/20 hover:shadow-indigo-500/40 transition-all duration-300 overflow-hidden font-medium text-indigo-950 bg-gradient-to-r from-[#e0e7ff] to-[#a5b4fc] rounded-sm pt-3 pr-8 pb-3 pl-8 relative shadow-lg">
+                            <div class="group-hover:translate-y-0 transition-transform duration-300 bg-white/40 absolute top-0 right-0 bottom-0 left-0 translate-y-full"></div>
+                            <span class="relative flex items-center gap-2 text-sm tracking-tight font-semibold font-sans">
+                                Explore Roles
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="arrow-down" class="lucide lucide-arrow-down w-4 h-4 stroke-[2]"><path d="M12 5v14"></path><path d="m19 12-7 7-7-7"></path></svg>
+                            </span>
+                        </button>
+                        <button class="group inline-flex overflow-hidden transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_0_25px_rgba(255,255,255,0.1)] rounded-sm pt-[1px] pr-[1px] pb-[1px] pl-[1px] relative items-center justify-center">
+                            <span class="absolute inset-[-100%] animate-[spin_3s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,transparent_0%,transparent_75%,#ffffff_100%)] opacity-0 transition-opacity duration-300 group-hover:opacity-100"></span>
+                            <span class="absolute inset-0 rounded-sm bg-zinc-800 transition-opacity duration-300 group-hover:opacity-0"></span>
+                            <span class="flex items-center justify-center gap-2 transition-colors duration-300 group-hover:text-white text-sm font-medium text-zinc-400 tracking-tight bg-gradient-to-b from-zinc-800 to-zinc-950 w-full h-full rounded-sm pt-3 pr-8 pb-3 pl-8 relative shadow-[inset_0_1px_0_rgba(255,255,255,0.1)]">
+                              <span class="relative z-10 font-sans">Read The Culture Memo</span>
+                            </span>
+                        </button>
+                    </div>
+                </div>
+                <div class="lg:col-span-4 flex flex-col justify-end gap-12 [animation:animationIn_0.8s_ease-out_0.7s_both] animate-on-scroll animate">
+                    <div class="grid grid-cols-2 lg:grid-cols-1 gap-12 border-t border-white/[0.05] pt-8 lg:border-t-0 lg:pt-0">
+                        <div class="">
+                            <div class="text-[10px] uppercase tracking-[0.2em] text-white/40 mb-2 font-medium font-sans">Open Positions</div>
+                            <div class="text-5xl italic text-white font-newsreader">12<span class="not-italic align-top text-2xl font-light text-indigo-300/80 font-newsreader mx-1"></span></div>
+                        </div>
+                        <div class="">
+                            <div class="text-[10px] uppercase tracking-[0.2em] text-white/40 mb-2 font-medium font-sans">Employee NPS</div>
+                            <div class="text-5xl italic text-white font-newsreader">84<span class="text-2xl text-white/40 not-italic align-top text-base uppercase tracking-widest ml-2 font-sans">/ 100</span></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Featured Testimonial (Replacement for Ticker) -->
+            <section class="border-b border-white/[0.03] bg-[#020202] md:px-12 lg:px-24 md:py-32 px-6 py-24">
+                <div class="max-w-[1440px] mx-auto grid lg:grid-cols-12 gap-12 items-center [animation:animationIn_0.8s_ease-out_0.1s_both] animate-on-scroll animate">
+                    <!-- Profile Column -->
+                    <div class="lg:col-span-3 flex flex-row lg:flex-col items-center lg:items-start gap-5 lg:gap-6 order-2 lg:order-1">
+                        <div class="w-16 h-16 rounded-full overflow-hidden border border-white/10 grayscale opacity-80">
+                            <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&amp;w=200&amp;auto=format&amp;fit=crop" alt="Sophia Graham" class="w-full h-full object-cover">
+                        </div>
+                        <div class="text-center lg:text-left">
+                            <h3 class="text-white font-medium text-base font-sans leading-tight">Sophia Graham</h3>
+                            <p class="text-white/40 text-[11px] uppercase tracking-widest font-sans mt-1.5 font-medium">CMO, Essentials</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Quote Column -->
+                    <div class="lg:col-span-9 order-1 lg:order-2 relative">
+                        <div class="absolute -top-10 -right-0 lg:-right-8 opacity-20 text-white select-none pointer-events-none">
+                            <svg width="48" height="48" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M14.017 21L14.017 18C14.017 16.8954 14.9124 16 16.017 16H19.017C19.5693 16 20.017 15.5523 20.017 15V9C20.017 8.44772 19.5693 8 19.017 8H15.017C14.4647 8 14.017 8.44772 14.017 9V11C14.017 11.5523 13.5693 12 13.017 12H12.017V5H22.017V15C22.017 18.3137 19.3307 21 16.017 21H14.017ZM5.0166 21L5.0166 18C5.0166 16.8954 5.91203 16 7.0166 16H10.0166C10.5689 16 11.0166 15.5523 11.0166 15V9C11.0166 8.44772 10.5689 8 10.0166 8H6.0166C5.46432 8 5.0166 8.44772 5.0166 9V11C5.0166 11.5523 4.56889 12 4.0166 12H3.0166V5H13.0166V15C13.0166 18.3137 10.3303 21 7.0166 21H5.0166Z"></path>
+                            </svg>
+                        </div>
+                        <p class="md:text-3xl lg:text-[2.5rem] leading-[1.3] text-2xl font-light text-white tracking-tight">
+                            "Working with Nexus was a game-changer. They refined our core infrastructure by removing unnecessary latency while keeping our system's reliability intact. The result was a sleek, modern architecture that feels both robust and scalable."
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Testimonial Grid (Replacement for Benefits) -->
+            <section class="grid grid-cols-1 lg:grid-cols-2 border-b border-white/[0.03] bg-[#020202]">
+                
+                <!-- Cell 1: Text -->
+                <div class="p-8 md:p-12 lg:p-20 border-b lg:border-b-0 lg:border-r border-white/[0.03] flex flex-col justify-between min-h-[400px] [animation:animationIn_0.8s_ease-out_0.2s_both] animate-on-scroll animate">
+                    <div class="relative mb-12">
+                        <div class="absolute -top-2 right-0 opacity-20 text-white">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M14.017 21L14.017 18C14.017 16.8954 14.9124 16 16.017 16H19.017C19.5693 16 20.017 15.5523 20.017 15V9C20.017 8.44772 19.5693 8 19.017 8H15.017C14.4647 8 14.017 8.44772 14.017 9V11C14.017 11.5523 13.5693 12 13.017 12H12.017V5H22.017V15C22.017 18.3137 19.3307 21 16.017 21H14.017ZM5.0166 21L5.0166 18C5.0166 16.8954 5.91203 16 7.0166 16H10.0166C10.5689 16 11.0166 15.5523 11.0166 15V9C11.0166 8.44772 10.5689 8 10.0166 8H6.0166C5.46432 8 5.0166 8.44772 5.0166 9V11C5.0166 11.5523 4.56889 12 4.0166 12H3.0166V5H13.0166V15C13.0166 18.3137 10.3303 21 7.0166 21H5.0166Z"></path>
+                            </svg>
+                        </div>
+                        <p class="text-lg md:text-xl text-white/90 font-light leading-relaxed font-sans tracking-tight pr-8">
+                            Nexus's minimalist API design transformed our workflow. The simplicity and clarity they brought to our integration made us stand out in a crowded market. Our developers immediately noticed the difference.
+                        </p>
+                    </div>
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 rounded-full overflow-hidden border border-white/10 grayscale opacity-80">
+                            <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&amp;w=200&amp;auto=format&amp;fit=crop" alt="Michael Foster" class="w-full h-full object-cover">
+                        </div>
+                        <div>
+                            <h4 class="text-white font-medium text-sm font-sans">Michael Foster</h4>
+                            <p class="text-white/40 text-[10px] uppercase tracking-widest font-sans mt-1">CEO, Elevate Tech</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Cell 2: Image -->
+                <div class="relative h-[400px] lg:h-auto border-b border-white/[0.03] lg:border-b-0 overflow-hidden [animation:animationIn_0.8s_ease-out_0.3s_both] animate-on-scroll animate group">
+                    <img src="https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/7435e4d9-602c-40d7-819a-3ea2d0ad5495_1600w.webp" alt="Workspace Mockup" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-80 mix-blend-lighten">
+                    <div class="absolute inset-0 bg-gradient-to-t from-[#020202] via-transparent to-transparent opacity-60"></div>
+                </div>
+
+                <!-- Cell 3: Text -->
+                <div class="p-8 md:p-12 lg:p-20 lg:border-r border-b lg:border-b-0 border-white/[0.03] flex flex-col justify-center min-h-[320px] [animation:animationIn_0.8s_ease-out_0.4s_both] animate-on-scroll animate">
+                    <div class="relative">
+                        <div class="absolute -top-2 right-0 opacity-20 text-white">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M14.017 21L14.017 18C14.017 16.8954 14.9124 16 16.017 16H19.017C19.5693 16 20.017 15.5523 20.017 15V9C20.017 8.44772 19.5693 8 19.017 8H15.017C14.4647 8 14.017 8.44772 14.017 9V11C14.017 11.5523 13.5693 12 13.017 12H12.017V5H22.017V15C22.017 18.3137 19.3307 21 16.017 21H14.017ZM5.0166 21L5.0166 18C5.0166 16.8954 5.91203 16 7.0166 16H10.0166C10.5689 16 11.0166 15.5523 11.0166 15V9C11.0166 8.44772 10.5689 8 10.0166 8H6.0166C5.46432 8 5.0166 8.44772 5.0166 9V11C5.0166 11.5523 4.56889 12 4.0166 12H3.0166V5H13.0166V15C13.0166 18.3137 10.3303 21 7.0166 21H5.0166Z"></path></svg>
+                        </div>
+                        <p class="text-base md:text-lg text-white/80 font-light leading-relaxed font-sans pr-6">
+                            Nexus's ability to balance simplicity with raw power is unmatched. They streamlined our deployment pipeline, making it more cohesive and reliable across all regions. We've received incredible feedback.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Cell 4: Text -->
+                <div class="p-8 md:p-12 lg:p-20 flex flex-col justify-center min-h-[320px] [animation:animationIn_0.8s_ease-out_0.5s_both] animate-on-scroll animate">
+                    <div class="relative">
+                        <div class="absolute -top-2 right-0 opacity-20 text-white">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M14.017 21L14.017 18C14.017 16.8954 14.9124 16 16.017 16H19.017C19.5693 16 20.017 15.5523 20.017 15V9C20.017 8.44772 19.5693 8 19.017 8H15.017C14.4647 8 14.017 8.44772 14.017 9V11C14.017 11.5523 13.5693 12 13.017 12H12.017V5H22.017V15C22.017 18.3137 19.3307 21 16.017 21H14.017ZM5.0166 21L5.0166 18C5.0166 16.8954 5.91203 16 7.0166 16H10.0166C10.5689 16 11.0166 15.5523 11.0166 15V9C11.0166 8.44772 10.5689 8 10.0166 8H6.0166C5.46432 8 5.0166 8.44772 5.0166 9V11C5.0166 11.5523 4.56889 12 4.0166 12H3.0166V5H13.0166V15C13.0166 18.3137 10.3303 21 7.0166 21H5.0166Z"></path></svg>
+                        </div>
+                        <p class="text-base md:text-lg text-white/80 font-light leading-relaxed font-sans pr-6">
+                            Efficiency isn't just about speed—it's about strategy, and Nexus understands that better than anyone. Our rebrand to their platform improved user engagement and trust immediately.
+                        </p>
+                    </div>
+                </div>
+
+            </section>
+
+            <!-- Life at Nexus (Modified Bento) -->
+            <section class="md:p-12 lg:p-24 bg-[#050505] pt-6 pr-6 pb-6 pl-6">
+                
+    <div class="mb-16 [animation:animationIn_0.8s_ease-out_0.2s_both] animate-on-scroll animate">
+        <h2 class="leading-tight md:text-5xl lg:text-6xl text-4xl italic text-white tracking-tight font-newsreader"><span class="font-light text-white/50 font-newsreader">Life at</span> Nexus</h2>
+    </div>
+
+    <!-- Bento Grid Container -->
+    <div class="grid grid-cols-1 md:grid-cols-12 gap-4 auto-rows-auto text-white gap-x-4 gap-y-4">
+        
+        <!-- Hero Image Card (Moved to Right) -->
+        <div class="col-span-1 md:col-span-12 lg:col-span-4 lg:col-start-9 lg:row-start-1 lg:row-span-2 relative h-[300px] lg:h-auto overflow-hidden rounded-sm bg-zinc-900 group spotlight-card" style="--mouse-x: -85.328125px; --mouse-y: -2130px;">
+            <img src="https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/5bd4cb49-b190-4f9f-8c6c-17c91e5b6749_1600w.webp" alt="Team Collaboration" class="absolute inset-0 w-full h-full object-cover opacity-60 mix-blend-luminosity group-hover:scale-105 transition-transform duration-700">
+            <div class="absolute inset-0 bg-gradient-to-t from-indigo-950/80 to-transparent mix-blend-multiply"></div>
+            <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent"></div>
+            
+            <!-- UI Overlays -->
+            <div class="absolute top-6 left-6 text-[10px] font-mono text-indigo-300/60 tracking-widest uppercase font-sans">Culture</div>
+            <div class="absolute bottom-6 left-6 right-6 flex justify-between items-end">
+                <div class="bg-black/80 backdrop-blur border border-white/10 p-3 rounded-sm w-full max-w-[160px]">
+                    <div class="text-[9px] text-white/40 uppercase tracking-widest mb-2 font-medium font-sans">Collaboration</div>
+                    <div class="h-1 w-full bg-zinc-800 rounded-full overflow-hidden">
+                        <div class="h-full bg-indigo-500 w-[94%]"></div>
+                    </div>
+                    <div class="flex justify-between text-[9px] mt-2 font-mono text-indigo-400">
+                        <span class="font-sans">High</span>
+                        <span class="font-sans">Sync</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Header Block (Moved to Left) -->
+        <div class="col-span-1 md:col-span-12 lg:col-span-8 lg:col-start-1 lg:row-start-1 bg-zinc-900/30 p-8 lg:p-10 rounded-sm flex flex-col justify-between min-h-[240px] spotlight-card group" style="--mouse-x: 756px; --mouse-y: -2130px;">
+            <div class="flex justify-between items-start">
+                <h3 class="text-3xl md:text-5xl lg:text-5xl text-white tracking-tight leading-[1.1] font-newsreader font-light">
+                    High Agency <span class="text-white/50 font-newsreader font-light">Environment</span>
+                </h3>
+                <span class="text-[10px] font-mono text-zinc-500 tracking-widest font-sans">[AUTONOMY: MAX]</span>
+            </div>
+            <div class="flex justify-between items-end mt-8">
+                <p class="text-xs text-zinc-500 max-w-sm font-medium tracking-wide leading-relaxed uppercase font-sans">We don't micromanage. We hire adults and give them the resources to do their best work.</p>
+                <div class="border border-white/10 w-10 h-10 rounded-full flex items-center justify-center text-white/80">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-award w-4 h-4"><circle cx="12" cy="8" r="7"></circle><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline></svg>
+                </div>
+            </div>
+        </div>
+
+        <!-- Stats (Moved to Left, Row 2) -->
+        <div class="col-span-1 md:col-span-12 lg:col-span-8 lg:col-start-1 lg:row-start-2 grid grid-cols-1 md:grid-cols-3 gap-4">
+            
+            <!-- Stat 1 -->
+            <div class="bg-zinc-900/30 p-6 rounded-sm flex flex-col justify-between gap-6 group transition-colors spotlight-card" style="--mouse-x: 756px; --mouse-y: -2386px;">
+                <div class="">
+                    <div class="text-[10px] text-zinc-500 uppercase tracking-widest mb-2 font-medium font-sans">Retention</div>
+                    <div class="text-3xl text-white font-newsreader font-light">96<span class="text-sm align-top ml-1">%</span></div>
+                </div>
+                <div class="space-y-2">
+                    <div class="flex gap-0.5 h-2">
+                        <div class="w-1.5 h-full bg-emerald-500/80 skew-x-[-12deg]"></div>
+                        <div class="w-1.5 h-full bg-emerald-500/80 skew-x-[-12deg]"></div>
+                        <div class="w-1.5 h-full bg-emerald-500/80 skew-x-[-12deg]"></div>
+                        <div class="w-1.5 h-full bg-emerald-500/80 skew-x-[-12deg]"></div>
+                        <div class="w-1.5 h-full bg-emerald-500/80 skew-x-[-12deg]"></div>
+                        <div class="w-1.5 h-full bg-emerald-500/80 skew-x-[-12deg]"></div>
+                        <div class="w-1.5 h-full bg-emerald-500/80 skew-x-[-12deg]"></div>
+                        <div class="w-1.5 h-full bg-emerald-500/20 skew-x-[-12deg]"></div>
+                    </div>
+                    <div class="flex justify-between text-[9px] text-zinc-600 font-mono uppercase">
+                        <span class="font-sans">Annual</span><span class="font-sans">Avg</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Stat 2 -->
+            <div class="bg-zinc-900/30 p-6 rounded-sm flex flex-col justify-between gap-6 group transition-colors spotlight-card" style="--mouse-x: 475.5625px; --mouse-y: -2386px;">
+                <div class="">
+                    <div class="text-[10px] text-zinc-500 uppercase tracking-widest mb-2 font-medium font-sans">Promotion Rate</div>
+                    <div class="text-3xl text-white font-newsreader font-light">34<span class="text-sm align-top ml-1">%</span></div>
+                </div>
+                <div class="space-y-2">
+                    <div class="flex gap-0.5 h-2">
+                        <div class="w-1.5 h-full bg-indigo-500 skew-x-[-12deg]"></div>
+                        <div class="w-1.5 h-full bg-indigo-500 skew-x-[-12deg]"></div>
+                        <div class="w-1.5 h-full bg-indigo-500 skew-x-[-12deg]"></div>
+                        <div class="w-1.5 h-full bg-indigo-500/20 skew-x-[-12deg]"></div>
+                        <div class="w-1.5 h-full bg-indigo-500/20 skew-x-[-12deg]"></div>
+                        <div class="w-1.5 h-full bg-indigo-500/20 skew-x-[-12deg]"></div>
+                        <div class="w-1.5 h-full bg-indigo-500/20 skew-x-[-12deg]"></div>
+                        <div class="w-1.5 h-full bg-indigo-500/20 skew-x-[-12deg]"></div>
+                    </div>
+                    <div class="flex justify-between text-[9px] text-zinc-600 font-mono uppercase">
+                        <span class="font-sans">Internal</span><span class="font-sans">Growth</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Stat 3 -->
+            <div class="bg-zinc-900/30 p-6 rounded-sm flex flex-col justify-between gap-6 group transition-colors spotlight-card" style="--mouse-x: 195.1171875px; --mouse-y: -2386px;">
+                <div class="">
+                    <div class="text-[10px] text-zinc-500 uppercase tracking-widest mb-2 font-medium font-sans">Engineering</div>
+                    <div class="text-3xl text-white font-newsreader font-light">65<span class="text-sm align-top ml-1">%</span></div>
+                </div>
+                <div class="space-y-2">
+                    <div class="flex gap-0.5 h-2">
+                        <div class="w-1.5 h-full bg-purple-500/80 skew-x-[-12deg]"></div>
+                        <div class="w-1.5 h-full bg-purple-500/80 skew-x-[-12deg]"></div>
+                        <div class="w-1.5 h-full bg-purple-500/80 skew-x-[-12deg]"></div>
+                        <div class="w-1.5 h-full bg-purple-500/80 skew-x-[-12deg]"></div>
+                        <div class="w-1.5 h-full bg-purple-500/80 skew-x-[-12deg]"></div>
+                        <div class="w-1.5 h-full bg-purple-500/20 skew-x-[-12deg]"></div>
+                        <div class="w-1.5 h-full bg-purple-500/20 skew-x-[-12deg]"></div>
+                        <div class="w-1.5 h-full bg-purple-500/20 skew-x-[-12deg]"></div>
+                    </div>
+                    <div class="flex justify-between text-[9px] text-zinc-600 font-mono uppercase">
+                        <span class="font-sans">Technical</span><span class="font-sans">Staff</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Impact Card (Moved to Left, Stacked) -->
+        <div class="col-span-1 md:col-span-12 lg:col-span-4 lg:row-start-3 lg:col-start-1 lg:row-span-2 flex flex-col min-h-[300px] bg-zinc-900 h-[400px] rounded-sm pt-8 pr-8 pb-8 pl-8 justify-between spotlight-card group h-[450px]" style="--mouse-x: 756px; --mouse-y: -2562.5px;">
+            <div class="flex justify-between">
+                    <div class="text-[10px] font-mono text-zinc-500 tracking-widest font-sans">[IMPACT]</div>
+                    <div class="border border-white/10 w-8 h-8 rounded-full flex items-center justify-center text-white/60 bg-white/5">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-rocket w-4 h-4"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"></path><path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"></path><path d="M9 12H4s.55-3.03 2-4c1.62-1.1 4-1 4-1"></path><path d="M12 15v5s3.03-.55 4-2c1.1-1.62 1-4 1-4"></path></svg>
+                    </div>
+            </div>
+            <div class="">
+                <h3 class="text-3xl md:text-3xl text-white tracking-tight leading-tight mb-6 font-newsreader font-light">
+                    Merit <span class="text-white/50 font-newsreader font-light">Based</span>
+                </h3>
+                <p class="text-[11px] uppercase leading-relaxed text-sm font-medium text-zinc-500 tracking-wide border-white/10 border-t mb-6 pt-4">
+                    Great ideas can come from anywhere. We value output and impact over tenure and titles.
+                </p>
+                <div class="border border-white/10 bg-black/40 p-3 rounded-sm">
+                    <div class="flex justify-between items-center mb-2">
+                        <div class="flex items-center gap-2">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="check-circle-2" class="lucide lucide-check-circle-2 w-3 h-3 text-indigo-500"><circle cx="12" cy="12" r="10"></circle><path d="m9 12 2 2 4-4"></path></svg>
+                            <span class="text-white text-sm font-mono font-bold font-sans">Flat</span>
+                        </div>
+                        <span class="text-[9px] text-zinc-600 uppercase tracking-widest font-sans">Structure</span>
+                    </div>
+                    <div class="h-1.5 w-full bg-zinc-800 rounded-full overflow-hidden">
+                        <div class="h-full bg-gradient-to-r from-indigo-500 to-purple-500 w-[100%]"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Global Hubs (Redesigned & Positioned Middle) -->
+        <div class="col-span-1 md:col-span-12 lg:col-span-4 lg:col-start-5 lg:row-start-3 flex flex-col min-h-[300px] spotlight-card group overflow-hidden bg-zinc-900 h-full z-10 rounded-sm relative justify-between" style="--mouse-x: 335.3359375px; --mouse-y: -2562.5px;">
+            <!-- Background Image -->
+            <img src="https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/58a069cd-1666-48e1-aa50-57e20220d4ba_1600w.webp" alt="Global Network" class="absolute inset-0 w-full h-full object-cover opacity-30 mix-blend-color-dodge" style="">
+            <div class="absolute inset-0 bg-gradient-to-b from-zinc-900 via-zinc-900/80 to-zinc-900/90"></div>
+            
+            <div class="z-10 flex flex-col h-full pt-8 pr-8 pb-8 pl-8 relative justify-between">
+                <div class="flex justify-between items-start">
+                    <div class="text-[10px] font-mono text-zinc-400 tracking-widest font-sans">[NETWORK]</div>
+                    <div class="flex items-center gap-2">
+                         <div class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></div>
+                         <span class="text-[9px] text-emerald-500/80 font-mono tracking-widest">LIVE</span>
+                    </div>
+                </div>
+                
+                <div class="space-y-6">
+                    <h3 class="text-3xl text-white tracking-tight leading-tight font-newsreader font-light">
+                        Global <span class="text-white/40 font-newsreader">Hubs</span>
+                    </h3>
+                    
+                    <div class="space-y-3">
+                        <!-- Location 1 -->
+                        <div class="flex items-center justify-between group/loc border-b border-white/5 pb-2">
+                            <div class="flex items-center gap-3">
+                                <span class="text-sm font-medium text-white/80 font-sans">San Francisco</span>
+                                <span class="text-[9px] bg-white/10 px-1.5 py-0.5 rounded text-white/50 font-mono">HQ</span>
+                            </div>
+                            <span class="text-[10px] text-zinc-600 font-mono group-hover/loc:text-indigo-400 transition-colors">09:41 PST</span>
+                        </div>
+                         <!-- Location 2 -->
+                         <div class="flex items-center justify-between group/loc border-b border-white/5 pb-2">
+                            <div class="flex items-center gap-3">
+                                <span class="text-sm font-medium text-white/80 font-sans">London</span>
+                                <span class="text-[9px] bg-white/10 px-1.5 py-0.5 rounded text-white/50 font-mono">UK</span>
+                            </div>
+                            <span class="text-[10px] text-zinc-600 font-mono group-hover/loc:text-indigo-400 transition-colors">17:41 GMT</span>
+                        </div>
+                         <!-- Location 3 -->
+                         <div class="flex items-center justify-between group/loc border-b border-white/5 pb-2">
+                            <div class="flex items-center gap-3">
+                                <span class="text-sm font-medium text-white/80 font-sans">New York</span>
+                                <span class="text-[9px] bg-white/10 px-1.5 py-0.5 rounded text-white/50 font-mono">US</span>
+                            </div>
+                            <span class="text-[10px] text-zinc-600 font-mono group-hover/loc:text-indigo-400 transition-colors">12:41 EST</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Diversity (Redesigned & Moved to Right) -->
+        <div class="col-span-1 md:col-span-12 lg:col-span-4 lg:col-start-9 lg:row-start-3 min-h-[300px] flex flex-col spotlight-card group overflow-hidden text-white bg-[#080808] rounded-sm pt-8 pr-8 pb-8 pl-8 relative h-full justify-between h-[450px]" style="--mouse-x: -85.328125px; --mouse-y: -2562.5px;">
+            <div class="">
+                <div class="flex justify-between items-start mb-2">
+                    <div class="text-[10px] text-zinc-500 font-mono tracking-widest font-sans">(DIVERSITY)</div>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-users w-4 h-4 text-zinc-600"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M22 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                </div>
+                <h3 class="text-3xl tracking-tight leading-tight font-newsreader font-light mb-1">Human <span class="text-white/50 font-newsreader font-light">First</span></h3>
+            </div>
+            
+            <div class="flex items-end justify-between mt-6">
+                <div class="relative w-32 h-32">
+                    <!-- Donut Chart representation using conic-gradient -->
+                    <div class="w-full h-full rounded-full bg-[conic-gradient(var(--tw-gradient-stops))] from-indigo-500 via-purple-500 to-zinc-800 mask-image-[radial-gradient(transparent_60%,_black_60%)] relative animate-[spin_20s_linear_infinite]" style="--tw-gradient-from: #6366f1; --tw-gradient-to: #27272a; --tw-gradient-stops: var(--tw-gradient-from) 0%, #8b5cf6 45%, #27272a 45%, #27272a 100%;"></div>
+                    <!-- Inner Circle -->
+                    <div class="absolute inset-0 m-auto w-20 h-20 bg-[#080808] rounded-full flex items-center justify-center flex-col z-10">
+                        <span class="text-2xl font-light font-newsreader text-white">44<span class="text-xs align-top opacity-50">%</span></span>
+                    </div>
+                </div>
+                
+                <div class="flex flex-col gap-4 items-end">
+                    <div class="text-right">
+                        <div class="text-xl font-light font-newsreader text-white">28+</div>
+                        <div class="text-[9px] text-zinc-500 uppercase tracking-widest font-sans">Countries</div>
+                    </div>
+                    <div class="text-right">
+                        <div class="text-xl font-light font-newsreader text-indigo-300">44%</div>
+                        <div class="text-[9px] text-zinc-500 uppercase tracking-widest font-sans">Non-Male</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-6 pt-4 border-t border-white/5 text-[10px] text-zinc-500 font-medium uppercase tracking-wide leading-relaxed">
+                Building products for humanity requires representing it.
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+            <!-- Open Positions Section (Job Board) -->
+            <section class="lg:py-32 border-white/[0.03] overflow-hidden bg-[#050505] border-b pt-24 pb-24 relative" id="open-roles">
+                
+                <!-- Vertical Background Lines -->
+                <div class="absolute inset-0 max-w-[1440px] mx-auto px-6 md:px-12 lg:px-24 pointer-events-none flex justify-between z-0">
+                    <div class="w-px h-full bg-white/[0.03]"></div>
+                    <div class="hidden md:block w-px h-full bg-white/[0.03] absolute left-1/2 -translate-x-1/2"></div>
+                    <div class="hidden lg:block w-px h-full bg-white/[0.03] absolute left-[33.33%]"></div>
+                    <div class="hidden lg:block w-px h-full bg-white/[0.03] absolute left-[66.66%]"></div>
+                    <div class="w-px h-full bg-white/[0.03]"></div>
+                </div>
+
+                <div class="z-10 md:px-12 lg:px-24 max-w-[1440px] mr-auto ml-auto pr-6 pl-6 relative">
+                    
+                    <!-- Section Header -->
+                    <div class="mb-16 [animation:animationIn_0.8s_ease-out_0.2s_both] animate-on-scroll animate">
+                        <div class="inline-flex items-center gap-2 mb-6 border border-white/10 rounded-full px-3 py-1 bg-white/[0.02]">
+                            <iconify-icon icon="solar:briefcase-linear" class="text-indigo-400" width="14"></iconify-icon>
+                            <span class="text-[10px] tracking-[0.2em] uppercase text-white/60 font-medium font-sans">Open Positions</span>
+                        </div>
+                        <h2 class="text-4xl md:text-5xl lg:text-6xl text-white font-newsreader italic tracking-tight font-light">
+                            Join the <span class="text-white/40 font-newsreader not-italic">Team</span>
+                        </h2>
+                    </div>
+
+                    <!-- Job List -->
+                    <div class="flex flex-col gap-12 [animation:animationIn_0.8s_ease-out_0.3s_both] animate-on-scroll animate">
+                        
+                        <!-- Engineering Category -->
+                        <div class="flex flex-col">
+                            <h3 class="text-sm font-semibold text-white uppercase tracking-widest border-b border-white/10 pb-4 mb-4 font-sans pl-2">Engineering &amp; Research</h3>
+                            
+                            <!-- Role 1 -->
+                            <a href="#" class="group relative flex flex-col md:flex-row md:items-center justify-between p-6 border-b border-white/[0.03] hover:bg-white/[0.02] transition-all duration-300 rounded-sm">
+                                <div class="flex flex-col gap-1 z-10">
+                                    <h4 class="text-lg text-white font-medium group-hover:text-indigo-300 transition-colors font-sans">Senior Machine Learning Engineer</h4>
+                                    <div class="flex items-center gap-3 text-white/40 text-xs font-mono mt-1">
+                                        <span>RESEARCH</span>
+                                        <span class="w-1 h-1 rounded-full bg-white/20"></span>
+                                        <span>REMOTE</span>
+                                    </div>
+                                </div>
+                                <div class="flex items-center gap-4 mt-4 md:mt-0 z-10">
+                                    <span class="px-3 py-1 rounded-full border border-white/5 bg-white/[0.02] text-[10px] uppercase tracking-widest text-white/60 font-sans">Full-time</span>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right w-4 h-4 text-white/20 group-hover:text-white transition-colors group-hover:translate-x-1"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+                                </div>
+                            </a>
+
+                            <!-- Role 2 -->
+                            <a href="#" class="group relative flex flex-col md:flex-row md:items-center justify-between p-6 border-b border-white/[0.03] hover:bg-white/[0.02] transition-all duration-300 rounded-sm">
+                                <div class="flex flex-col gap-1 z-10">
+                                    <h4 class="text-lg text-white font-medium group-hover:text-indigo-300 transition-colors font-sans">Staff Backend Engineer (Distributed Systems)</h4>
+                                    <div class="flex items-center gap-3 text-white/40 text-xs font-mono mt-1">
+                                        <span>PLATFORM</span>
+                                        <span class="w-1 h-1 rounded-full bg-white/20"></span>
+                                        <span>SAN FRANCISCO</span>
+                                    </div>
+                                </div>
+                                <div class="flex items-center gap-4 mt-4 md:mt-0 z-10">
+                                    <span class="px-3 py-1 rounded-full border border-white/5 bg-white/[0.02] text-[10px] uppercase tracking-widest text-white/60 font-sans">Full-time</span>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right w-4 h-4 text-white/20 group-hover:text-white transition-colors group-hover:translate-x-1"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+                                </div>
+                            </a>
+
+                            <!-- Role 3 -->
+                            <a href="#" class="group relative flex flex-col md:flex-row md:items-center justify-between p-6 border-b border-white/[0.03] hover:bg-white/[0.02] transition-all duration-300 rounded-sm">
+                                <div class="flex flex-col gap-1 z-10">
+                                    <h4 class="text-lg text-white font-medium group-hover:text-indigo-300 transition-colors font-sans">Applied Research Scientist</h4>
+                                    <div class="flex items-center gap-3 text-white/40 text-xs font-mono mt-1">
+                                        <span>AI SAFETY</span>
+                                        <span class="w-1 h-1 rounded-full bg-white/20"></span>
+                                        <span>LONDON</span>
+                                    </div>
+                                </div>
+                                <div class="flex items-center gap-4 mt-4 md:mt-0 z-10">
+                                    <span class="px-3 py-1 rounded-full border border-white/5 bg-white/[0.02] text-[10px] uppercase tracking-widest text-white/60 font-sans">Full-time</span>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right w-4 h-4 text-white/20 group-hover:text-white transition-colors group-hover:translate-x-1"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+                                </div>
+                            </a>
+                             <!-- Role 4 -->
+                             <a href="#" class="group relative flex flex-col md:flex-row md:items-center justify-between p-6 border-b border-white/[0.03] hover:bg-white/[0.02] transition-all duration-300 rounded-sm">
+                                <div class="flex flex-col gap-1 z-10">
+                                    <h4 class="text-lg text-white font-medium group-hover:text-indigo-300 transition-colors font-sans">Frontend Engineer, Design Systems</h4>
+                                    <div class="flex items-center gap-3 text-white/40 text-xs font-mono mt-1">
+                                        <span>PRODUCT</span>
+                                        <span class="w-1 h-1 rounded-full bg-white/20"></span>
+                                        <span>NEW YORK</span>
+                                    </div>
+                                </div>
+                                <div class="flex items-center gap-4 mt-4 md:mt-0 z-10">
+                                    <span class="px-3 py-1 rounded-full border border-white/5 bg-white/[0.02] text-[10px] uppercase tracking-widest text-white/60 font-sans">Full-time</span>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right w-4 h-4 text-white/20 group-hover:text-white transition-colors group-hover:translate-x-1"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+                                </div>
+                            </a>
+                        </div>
+
+                        <!-- Product & Design Category -->
+                        <div class="flex flex-col">
+                            <h3 class="text-sm font-semibold text-white uppercase tracking-widest border-b border-white/10 pb-4 mb-4 font-sans pl-2">Product &amp; Design</h3>
+                            
+                            <!-- Role 1 -->
+                            <a href="#" class="group relative flex flex-col md:flex-row md:items-center justify-between p-6 border-b border-white/[0.03] hover:bg-white/[0.02] transition-all duration-300 rounded-sm">
+                                <div class="flex flex-col gap-1 z-10">
+                                    <h4 class="text-lg text-white font-medium group-hover:text-indigo-300 transition-colors font-sans">Senior Product Designer</h4>
+                                    <div class="flex items-center gap-3 text-white/40 text-xs font-mono mt-1">
+                                        <span>DESIGN</span>
+                                        <span class="w-1 h-1 rounded-full bg-white/20"></span>
+                                        <span>SAN FRANCISCO</span>
+                                    </div>
+                                </div>
+                                <div class="flex items-center gap-4 mt-4 md:mt-0 z-10">
+                                    <span class="px-3 py-1 rounded-full border border-white/5 bg-white/[0.02] text-[10px] uppercase tracking-widest text-white/60 font-sans">Full-time</span>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right w-4 h-4 text-white/20 group-hover:text-white transition-colors group-hover:translate-x-1"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+                                </div>
+                            </a>
+
+                            <!-- Role 2 -->
+                            <a href="#" class="group relative flex flex-col md:flex-row md:items-center justify-between p-6 border-b border-white/[0.03] hover:bg-white/[0.02] transition-all duration-300 rounded-sm">
+                                <div class="flex flex-col gap-1 z-10">
+                                    <h4 class="text-lg text-white font-medium group-hover:text-indigo-300 transition-colors font-sans">Technical Product Manager</h4>
+                                    <div class="flex items-center gap-3 text-white/40 text-xs font-mono mt-1">
+                                        <span>PRODUCT</span>
+                                        <span class="w-1 h-1 rounded-full bg-white/20"></span>
+                                        <span>REMOTE</span>
+                                    </div>
+                                </div>
+                                <div class="flex items-center gap-4 mt-4 md:mt-0 z-10">
+                                    <span class="px-3 py-1 rounded-full border border-white/5 bg-white/[0.02] text-[10px] uppercase tracking-widest text-white/60 font-sans">Full-time</span>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right w-4 h-4 text-white/20 group-hover:text-white transition-colors group-hover:translate-x-1"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+                                </div>
+                            </a>
+                        </div>
+
+                    </div>
+                    
+                    <div class="mt-12 text-center">
+                        <p class="text-white/40 text-sm font-sans mb-4">Don't see your role?</p>
+                        <a href="#" class="inline-flex items-center gap-2 text-indigo-400 hover:text-indigo-300 transition-colors text-sm font-medium font-sans">
+                            Submit a General Application
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- CTA Section -->
+            <section class="lg:py-32 border-white/[0.03] overflow-hidden bg-[#050505] border-b pt-24 pb-24 relative">
+                
+                <!-- Vertical Background Lines -->
+                <div class="absolute inset-0 max-w-[1440px] mx-auto px-6 md:px-12 lg:px-24 pointer-events-none flex justify-between z-0">
+                    <div class="w-px h-full bg-white/[0.03]"></div>
+                    <div class="hidden md:block w-px h-full bg-white/[0.03] absolute left-1/2 -translate-x-1/2"></div>
+                    <div class="hidden lg:block w-px h-full bg-white/[0.03] absolute left-[33.33%]"></div>
+                    <div class="hidden lg:block w-px h-full bg-white/[0.03] absolute left-[66.66%]"></div>
+                    <div class="w-px h-full bg-white/[0.03]"></div>
+                </div>
+            
+                <div class="z-10 md:px-12 lg:px-24 max-w-[1440px] mr-auto ml-auto pr-6 pl-6 relative text-center">
+                    
+                    <div class="max-w-3xl mx-auto [animation:animationIn_0.8s_ease-out_0.2s_both] animate-on-scroll animate">
+                        <div class="w-16 h-16 bg-white/[0.03] border border-white/5 flex items-center justify-center text-white/90 rounded-sm mx-auto mb-8">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-sparkles w-8 h-8"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"></path></svg>
+                        </div>
+                        <h2 class="md:text-5xl lg:text-6xl text-4xl font-light italic text-white tracking-tight font-newsreader max-w-xl mr-auto mb-6 ml-auto">
+  Ready to do the <span class="not-italic text-white/40 font-newsreader">best work</span> of your life?
+</h2>
+                        <p class="text-white/50 leading-relaxed font-sans text-lg mb-10">
+                            The future doesn't build itself. If you are ready to solve the hardest problems in intelligence, we are ready for you.
+                        </p>
+                        
+                        <div class="flex justify-center gap-4">
+                            <button class="group inline-flex w-fit overflow-hidden transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_0_25px_rgba(255,255,255,0.1)] rounded-sm pt-[1px] pr-[1px] pb-[1px] pl-[1px] relative items-center justify-center">
+                                <span class="absolute inset-[-100%] animate-[spin_3s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,transparent_0%,transparent_75%,#ffffff_100%)] opacity-0 transition-opacity duration-300 group-hover:opacity-100"></span>
+                                <span class="absolute inset-0 rounded-sm bg-zinc-800 transition-opacity duration-300 group-hover:opacity-0"></span>
+                                <span class="flex items-center justify-center gap-3 transition-colors duration-300 group-hover:text-white text-sm font-medium text-zinc-300 tracking-tight bg-black w-full h-full rounded-sm pt-4 pr-12 pb-4 pl-12 relative">
+                                    <span class="relative z-10 font-sans uppercase tracking-widest text-xs">Apply Now</span>
+                                </span>
+                            </button>
+                        </div>
+                    </div>
+            
+                </div>
+            </section>
+
+            <!-- Footer -->
+            <footer class="relative bg-[#050505] border-t border-white/[0.03] overflow-hidden">
+                
+                <!-- Vertical Background Lines (4 Column Grid) -->
+                <div class="absolute inset-0 max-w-[1440px] mx-auto px-6 md:px-12 lg:px-24 pointer-events-none flex justify-between z-0">
+                    <div class="w-px h-full bg-white/[0.03]"></div>
+                    <div class="hidden lg:block w-px h-full bg-white/[0.03] absolute left-[25%]"></div>
+                    <div class="hidden md:block w-px h-full bg-white/[0.03] absolute left-1/2 -translate-x-1/2"></div>
+                    <div class="hidden lg:block w-px h-full bg-white/[0.03] absolute left-[75%]"></div>
+                    <div class="w-px h-full bg-white/[0.03]"></div>
+                </div>
+
+                <!-- Top Highlight Gradient (Chip Effect) -->
+                <div class="absolute top-0 left-1/2 -translate-x-1/2 w-96 h-px bg-gradient-to-r from-transparent via-indigo-500/50 to-transparent shadow-[0_0_15px_rgba(99,102,241,0.5)] z-20"></div>
+
+                <div class="relative z-10 max-w-[1440px] mx-auto px-6 md:px-12 lg:px-24">
+                    
+                    <!-- Social Connections Row -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 border-b border-white/[0.03]">
+                        
+                        <!-- Facebook -->
+                        <a href="#" class="group relative py-8 lg:pr-8 flex items-center justify-between border-b md:border-b-0 md:border-r border-white/[0.03] hover:bg-white/[0.02] transition-all duration-500">
+                            <div class="flex items-center gap-4">
+                                <iconify-icon icon="simple-icons:facebook" class="text-white/40 group-hover:text-[#1877F2] transition-colors duration-300" width="20"></iconify-icon>
+                                <span class="text-sm font-medium text-white/60 group-hover:text-white transition-colors font-sans">Facebook</span>
+                            </div>
+                            <div class="w-8 h-8 rounded-full border border-white/5 flex items-center justify-center bg-white/[0.02] group-hover:bg-white/10 transition-colors">
+                                <iconify-icon icon="solar:arrow-right-up-linear" class="text-white/40 group-hover:text-white transition-colors" width="16"></iconify-icon>
+                            </div>
+                        </a>
+
+                        <!-- X / Twitter -->
+                        <a href="#" class="group relative py-8 lg:px-8 flex items-center justify-between border-b md:border-b-0 lg:border-r border-white/[0.03] hover:bg-white/[0.02] transition-all duration-500">
+                            <div class="flex items-center gap-4">
+                                <iconify-icon icon="simple-icons:x" class="text-white/40 group-hover:text-white transition-colors duration-300" width="18"></iconify-icon>
+                                <span class="text-sm font-medium text-white/60 group-hover:text-white transition-colors font-sans">Twitter</span>
+                            </div>
+                            <div class="w-8 h-8 rounded-full border border-white/5 flex items-center justify-center bg-white/[0.02] group-hover:bg-white/10 transition-colors">
+                                <iconify-icon icon="solar:arrow-right-up-linear" class="text-white/40 group-hover:text-white transition-colors" width="16"></iconify-icon>
+                            </div>
+                        </a>
+
+                        <!-- Youtube -->
+                        <a href="#" class="group relative py-8 lg:px-8 flex items-center justify-between border-b md:border-b-0 md:border-r border-white/[0.03] hover:bg-white/[0.02] transition-all duration-500">
+                            <div class="flex items-center gap-4">
+                                <iconify-icon icon="simple-icons:youtube" class="text-white/40 group-hover:text-[#FF0000] transition-colors duration-300" width="20"></iconify-icon>
+                                <span class="text-sm font-medium text-white/60 group-hover:text-white transition-colors font-sans">Youtube</span>
+                            </div>
+                            <div class="w-8 h-8 rounded-full border border-white/5 flex items-center justify-center bg-white/[0.02] group-hover:bg-white/10 transition-colors">
+                                <iconify-icon icon="solar:arrow-right-up-linear" class="text-white/40 group-hover:text-white transition-colors" width="16"></iconify-icon>
+                            </div>
+                        </a>
+
+                        <!-- Instagram -->
+                        <a href="#" class="group relative py-8 lg:pl-8 flex items-center justify-between hover:bg-white/[0.02] transition-all duration-500">
+                            <div class="flex items-center gap-4">
+                                <iconify-icon icon="simple-icons:instagram" class="text-white/40 group-hover:text-[#E4405F] transition-colors duration-300" width="20"></iconify-icon>
+                                <span class="text-sm font-medium text-white/60 group-hover:text-white transition-colors font-sans">Instagram</span>
+                            </div>
+                            <div class="w-8 h-8 rounded-full border border-white/5 flex items-center justify-center bg-white/[0.02] group-hover:bg-white/10 transition-colors">
+                                <iconify-icon icon="solar:arrow-right-up-linear" class="text-white/40 group-hover:text-white transition-colors" width="16"></iconify-icon>
+                            </div>
+                        </a>
+
+                    </div>
+
+                    <!-- Footer Links Grid -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 pt-16 pb-24">
+                        
+                        <!-- Column 01 -->
+                        <div class="flex flex-col gap-8 lg:pr-8 border-r-0 md:border-r border-white/[0.03] border-b md:border-b-0 pb-12 md:pb-0">
+                            <div class="flex flex-col gap-2">
+                                <span class="font-mono text-[10px] text-zinc-600 tracking-widest font-sans">01</span>
+                                <h4 class="font-sans text-xs font-semibold tracking-[0.2em] text-white uppercase">About Us</h4>
+                            </div>
+                            <ul class="flex flex-col gap-4">
+                                <li><a href="#" class="text-[13px] text-white/40 hover:text-white transition-colors duration-300 font-sans">Pricing Methodology</a></li>
+                                <li><a href="#" class="text-[13px] text-white/40 hover:text-white transition-colors duration-300 font-sans">Contact Sales</a></li>
+                                <li><a href="#" class="text-[13px] text-white/40 hover:text-white transition-colors duration-300 font-sans">Documentation</a></li>
+                                <li><a href="#" class="text-[13px] text-white/40 hover:text-white transition-colors duration-300 font-sans">Latest News</a></li>
+                            </ul>
+                        </div>
+
+                        <!-- Column 02 -->
+                        <div class="flex flex-col gap-8 md:pl-8 lg:px-8 border-r-0 lg:border-r border-white/[0.03] border-b md:border-b-0 py-12 md:py-0">
+                            <div class="flex flex-col gap-2">
+                                <span class="font-mono text-[10px] text-zinc-600 tracking-widest font-sans">02</span>
+                                <h4 class="font-sans text-xs font-semibold tracking-[0.2em] text-white uppercase">Support</h4>
+                            </div>
+                            <ul class="flex flex-col gap-4">
+                                <li><a href="#" class="text-[13px] text-white/40 hover:text-white transition-colors duration-300 font-sans">Help Center</a></li>
+                                <li><a href="#" class="text-[13px] text-white/40 hover:text-white transition-colors duration-300 font-sans">API Status</a></li>
+                                <li><a href="#" class="text-[13px] text-white/40 hover:text-white transition-colors duration-300 font-sans">Report Issue</a></li>
+                                <li><a href="#" class="text-[13px] text-white/40 hover:text-white transition-colors duration-300 font-sans">Security Audit</a></li>
+                            </ul>
+                        </div>
+
+                        <!-- Column 03 -->
+                        <div class="flex flex-col gap-8 lg:px-8 border-r-0 md:border-r border-white/[0.03] border-b md:border-b-0 py-12 md:py-0">
+                            <div class="flex flex-col gap-2">
+                                <span class="font-mono text-[10px] text-zinc-600 tracking-widest font-sans">03</span>
+                                <h4 class="font-sans text-xs font-semibold tracking-[0.2em] text-white uppercase">Community</h4>
+                            </div>
+                            <ul class="flex flex-col gap-4">
+                                <li><a href="#" class="text-[13px] text-white/40 hover:text-white transition-colors duration-300 font-sans">Developer Forum</a></li>
+                                <li><a href="#" class="text-[13px] text-white/40 hover:text-white transition-colors duration-300 font-sans">Events &amp; Hackathons</a></li>
+                                <li><a href="#" class="text-[13px] text-white/40 hover:text-white transition-colors duration-300 font-sans">Partner Program</a></li>
+                                <li><a href="#" class="text-[13px] text-white/40 hover:text-white transition-colors duration-300 font-sans">Careers</a></li>
+                            </ul>
+                        </div>
+
+                        <!-- Column 04 -->
+                        <div class="flex flex-col gap-8 md:pl-8 lg:pl-8 py-12 md:py-0">
+                            <div class="flex flex-col gap-2">
+                                <span class="font-mono text-[10px] text-zinc-600 tracking-widest font-sans">04</span>
+                                <h4 class="font-sans text-xs font-semibold tracking-[0.2em] text-white uppercase">Legal</h4>
+                            </div>
+                            <ul class="flex flex-col gap-4">
+                                <li><a href="#" class="text-[13px] text-white/40 hover:text-white transition-colors duration-300 font-sans">Investor Relations</a></li>
+                                <li><a href="#" class="text-[13px] text-white/40 hover:text-white transition-colors duration-300 font-sans">Terms of Service</a></li>
+                                <li><a href="#" class="text-[13px] text-white/40 hover:text-white transition-colors duration-300 font-sans">Privacy Policy</a></li>
+                                <li><a href="#" class="text-[13px] text-white/40 hover:text-white transition-colors duration-300 font-sans">Cookie Settings</a></li>
+                            </ul>
+                        </div>
+
+                    </div>
+
+                    <!-- Bottom Copyright -->
+                    <div class="flex flex-col md:flex-row justify-between items-center gap-6 py-12 border-t border-white/[0.03]">
+                        <div class="flex items-center gap-3">
+                            <div class="w-6 h-6 bg-white/[0.05] rounded-sm flex items-center justify-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-cpu w-3 h-3 text-white/60"><path d="M12 20v2"></path><path d="M12 2v2"></path><path d="M17 20v2"></path><path d="M17 2v2"></path><path d="M2 12h2"></path><path d="M2 17h2"></path><path d="M2 7h2"></path><path d="M20 12h2"></path><path d="M20 17h2"></path><path d="M20 7h2"></path><path d="M7 20v2"></path><path d="M7 2v2"></path><rect x="4" y="4" width="16" height="16" rx="2"></rect><rect x="8" y="8" width="8" height="8" rx="1"></rect></svg>
+                            </div>
+                            <span class="text-[11px] text-white/30 font-sans">© 2025 NEXUS INTELLIGENCE INC.</span>
+                        </div>
+                        <div class="flex items-center gap-6">
+                            <div class="flex items-center gap-2">
+                                <div class="w-1.5 h-1.5 rounded-full bg-emerald-500 shadow-[0_0_10px_rgba(16,185,129,0.5)]"></div>
+                                <span class="text-[11px] text-emerald-500/80 font-mono font-sans">ALL SYSTEMS OPERATIONAL</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </footer>
+        </main>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            lucide.createIcons();
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("animate");
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.1, rootMargin: "0px 0px -5% 0px" });
+
+            document.querySelectorAll(".animate-on-scroll").forEach((el) => {
+                observer.observe(el);
+            });
+
+            const cards = document.querySelectorAll(".spotlight-card");
+            document.addEventListener("mousemove", (e) => {
+                cards.forEach(card => {
+                    const rect = card.getBoundingClientRect();
+                    const x = e.clientX - rect.left;
+                    const y = e.clientY - rect.top;
+                    card.style.setProperty("--mouse-x", `${x}px`);
+                    card.style.setProperty("--mouse-y", `${y}px`);
+                });
+            });
+        });
+    </script>
+
+</body></html>
