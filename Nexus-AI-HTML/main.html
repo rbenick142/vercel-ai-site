@@ -225,89 +225,179 @@ animation: beam-drop 7s cubic-bezier(0.4, 0, 0.2, 1) infinite;
                 </div>
             </section>
 
-            <!-- Features Grid (Modified to 6 items with numbers) -->
-            <section class="grid border-white/[0.03] md:grid-cols-2 lg:grid-cols-3 md:p-12 lg:p-24 bg-[#020202] border-b px-6 py-6 gap-x-6 gap-y-6">
+            <!-- Features Grid (Enhanced with animations and business-focused copy) -->
+            <section class="grid border-white/[0.03] md:grid-cols-2 lg:grid-cols-3 md:p-12 lg:p-24 bg-[#020202] border-b px-6 py-6 gap-6">
                 
-                <!-- 01 -->
-                <div class="spotlight-card group p-8 lg:p-12 rounded-sm [animation:animationIn_0.8s_ease-out_0.2s_both] animate-on-scroll animate" style="--mouse-x: 437px; --mouse-y: -907.5px;">
-                    <span class="absolute top-8 right-8 text-[11px] font-mono text-white/20 font-sans" style="">01</span>
-                    <div class="relative z-10 flex flex-col h-full justify-between gap-16">
-                        <div class="w-12 h-12 bg-white/[0.03] border border-white/5 flex items-center justify-center text-white/90 rounded-sm group-hover:scale-110 transition-transform duration-500">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="search" class="lucide lucide-search w-6 h-6 stroke-[1.5]"><path d="m21 21-4.34-4.34"></path><circle cx="11" cy="11" r="8"></circle></svg>
+                <!-- 01: Infrastructure Audit -->
+                <div class="spotlight-card group p-8 lg:p-12 rounded-sm [animation:animationIn_0.8s_ease-out_0.2s_both] animate-on-scroll animate relative overflow-hidden cursor-pointer" style="--mouse-x: 0px; --mouse-y: 0px;">
+                    <!-- Animated background gradient on hover -->
+                    <div class="absolute inset-0 bg-gradient-to-br from-[#F86939]/0 via-[#F86939]/0 to-[#F86939]/0 group-hover:from-[#F86939]/5 group-hover:via-[#F86939]/10 group-hover:to-[#F86939]/5 transition-all duration-700 opacity-0 group-hover:opacity-100"></div>
+                    
+                    <!-- Floating number badge -->
+                    <span class="absolute top-6 right-6 text-[11px] font-mono text-white/20 group-hover:text-[#F86939] transition-colors duration-300 font-sans z-20">01</span>
+                    
+                    <div class="relative z-10 flex flex-col h-full justify-between gap-8">
+                        <!-- Enhanced icon with glow effect -->
+                        <div class="relative">
+                            <div class="w-14 h-14 bg-white/[0.03] border border-white/5 group-hover:border-[#F86939]/30 flex items-center justify-center text-white/90 rounded-sm group-hover:scale-110 group-hover:bg-[#F86939]/10 transition-all duration-500 relative overflow-hidden">
+                                <!-- Glow effect on hover -->
+                                <div class="absolute inset-0 bg-[#F86939] opacity-0 group-hover:opacity-20 blur-xl transition-opacity duration-500"></div>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="search" class="lucide lucide-search w-7 h-7 stroke-[1.5] relative z-10 group-hover:text-[#F86939] transition-colors duration-300"><path d="m21 21-4.34-4.34"></path><circle cx="11" cy="11" r="8"></circle></svg>
+                            </div>
+                            <!-- Animated pulse ring -->
+                            <div class="absolute inset-0 rounded-sm border border-[#F86939]/0 group-hover:border-[#F86939]/20 group-hover:animate-ping"></div>
                         </div>
-                        <div class="">
-                            <h3 class="text-xl text-white mb-3 font-serif italic tracking-wide font-sans" style="">Infrastructure Audit</h3>
-                            <p class="text-[14px] text-white/50 leading-relaxed font-sans" style="">Deep-dive analysis of your current data stack to identify readiness for vectorization and RAG implementation.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 02 -->
-                <div class="spotlight-card group p-8 lg:p-12 rounded-sm [animation:animationIn_0.8s_ease-out_0.3s_both] animate-on-scroll animate" style="--mouse-x: 13.671875px; --mouse-y: -907.5px;">
-                    <span class="absolute top-8 right-8 text-[11px] font-mono text-white/20 font-sans" style="">02</span>
-                    <div class="relative z-10 flex flex-col h-full justify-between gap-16">
-                        <div class="w-12 h-12 bg-white/[0.03] border border-white/5 flex items-center justify-center text-white/90 rounded-sm group-hover:scale-110 transition-transform duration-500">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="file-code" class="lucide lucide-file-code w-6 h-6 stroke-[1.5]"><path d="M6 22a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h8a2.4 2.4 0 0 1 1.704.706l3.588 3.588A2.4 2.4 0 0 1 20 8v12a2 2 0 0 1-2 2z"></path><path d="M14 2v5a1 1 0 0 0 1 1h5"></path><path d="M10 12.5 8 15l2 2.5"></path><path d="m14 12.5 2 2.5-2 2.5"></path></svg>
-                        </div>
-                        <div>
-                            <h3 class="text-xl text-white mb-3 font-serif italic tracking-wide font-sans" style="">Model Integration</h3>
-                            <p class="text-[14px] text-white/50 leading-relaxed font-sans" style="">Seamless API orchestration connecting proprietary data with foundational models (GPT-4, Claude, Llama).</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 03 -->
-                <div class="spotlight-card group p-8 lg:p-12 rounded-sm [animation:animationIn_0.8s_ease-out_0.4s_both] animate-on-scroll animate" style="--mouse-x: -409.6640625px; --mouse-y: -907.5px;">
-                    <span class="absolute top-8 right-8 text-[11px] font-mono text-white/20 font-sans" style="">03</span>
-                    <div class="relative z-10 flex flex-col h-full justify-between gap-16">
-                        <div class="w-12 h-12 bg-white/[0.03] border border-white/5 flex items-center justify-center text-white/90 rounded-sm group-hover:scale-110 transition-transform duration-500">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="bar-chart-2" class="lucide lucide-bar-chart-2 w-6 h-6 stroke-[1.5]"><path d="M5 21v-6"></path><path d="M12 21V3"></path><path d="M19 21V9"></path></svg>
-                        </div>
-                        <div class="">
-                            <h3 class="text-xl text-white mb-3 font-serif italic tracking-wide font-sans" style="">Strategic Roadmapping</h3>
-                            <p class="text-[14px] text-white/50 leading-relaxed font-sans" style="">Quarterly execution plans that align AI capabilities with core business KPIs and competitive positioning.</p>
+                        
+                        <div class="space-y-3">
+                            <h3 class="text-xl lg:text-2xl text-white mb-2 font-serif italic tracking-wide group-hover:text-[#F86939] transition-colors duration-300 font-sans">AI Readiness Assessment</h3>
+                            <p class="text-[14px] lg:text-[15px] text-white/50 leading-relaxed group-hover:text-white/70 transition-colors duration-300 font-sans">
+                                Discover exactly where AI can drive immediate value in your business. We analyze your data, processes, and workflows to identify quick wins and long-term opportunities—no technical jargon, just clear ROI.
+                            </p>
+                            <!-- Benefit highlight -->
+                            <div class="flex items-center gap-2 pt-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                <div class="w-1.5 h-1.5 rounded-full bg-[#F86939]"></div>
+                                <span class="text-[12px] text-[#F86939] font-medium font-sans">2-Week Assessment</span>
+                            </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- 04 -->
-                <div class="spotlight-card group p-8 lg:p-12 rounded-sm [animation:animationIn_0.8s_ease-out_0.5s_both] animate-on-scroll animate" style="--mouse-x: 437px; --mouse-y: -1247.75px;">
-                    <span class="absolute top-8 right-8 text-[11px] font-mono text-white/20 font-sans" style="">04</span>
-                    <div class="relative z-10 flex flex-col h-full justify-between gap-16">
-                        <div class="w-12 h-12 bg-white/[0.03] border border-white/5 flex items-center justify-center text-white/90 rounded-sm group-hover:scale-110 transition-transform duration-500">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="network" class="lucide lucide-network w-6 h-6 stroke-[1.5]"><rect x="16" y="16" width="6" height="6" rx="1"></rect><rect x="2" y="16" width="6" height="6" rx="1"></rect><rect x="9" y="2" width="6" height="6" rx="1"></rect><path d="M5 16v-3a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v3"></path><path d="M12 12V8"></path></svg>
+                <!-- 02: Model Integration -->
+                <div class="spotlight-card group p-8 lg:p-12 rounded-sm [animation:animationIn_0.8s_ease-out_0.3s_both] animate-on-scroll animate relative overflow-hidden cursor-pointer" style="--mouse-x: 0px; --mouse-y: 0px;">
+                    <div class="absolute inset-0 bg-gradient-to-br from-[#F86939]/0 via-[#F86939]/0 to-[#F86939]/0 group-hover:from-[#F86939]/5 group-hover:via-[#F86939]/10 group-hover:to-[#F86939]/5 transition-all duration-700 opacity-0 group-hover:opacity-100"></div>
+                    
+                    <span class="absolute top-6 right-6 text-[11px] font-mono text-white/20 group-hover:text-[#F86939] transition-colors duration-300 font-sans z-20">02</span>
+                    
+                    <div class="relative z-10 flex flex-col h-full justify-between gap-8">
+                        <div class="relative">
+                            <div class="w-14 h-14 bg-white/[0.03] border border-white/5 group-hover:border-[#F86939]/30 flex items-center justify-center text-white/90 rounded-sm group-hover:scale-110 group-hover:bg-[#F86939]/10 transition-all duration-500 relative overflow-hidden">
+                                <div class="absolute inset-0 bg-[#F86939] opacity-0 group-hover:opacity-20 blur-xl transition-opacity duration-500"></div>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="zap" class="lucide lucide-zap w-7 h-7 stroke-[1.5] relative z-10 group-hover:text-[#F86939] transition-colors duration-300"><path d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z"></path></svg>
+                            </div>
+                            <div class="absolute inset-0 rounded-sm border border-[#F86939]/0 group-hover:border-[#F86939]/20 group-hover:animate-ping"></div>
                         </div>
-                        <div class="">
-                            <h3 class="text-xl text-white mb-3 font-serif italic tracking-wide font-sans" style="">Vector Embedding</h3>
-                            <p class="text-[14px] text-white/50 leading-relaxed font-sans" style="">High-dimensional data mapping to enable semantic search and retrieval systems with sub-millisecond latency.</p>
+                        
+                        <div class="space-y-3">
+                            <h3 class="text-xl lg:text-2xl text-white mb-2 font-serif italic tracking-wide group-hover:text-[#F86939] transition-colors duration-300 font-sans">Smart AI Integration</h3>
+                            <p class="text-[14px] lg:text-[15px] text-white/50 leading-relaxed group-hover:text-white/70 transition-colors duration-300 font-sans">
+                                Connect your existing tools and data to powerful AI models without rebuilding everything. We handle the complex integration so you can start automating workflows, enhancing customer experiences, and making smarter decisions—fast.
+                            </p>
+                            <div class="flex items-center gap-2 pt-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                <div class="w-1.5 h-1.5 rounded-full bg-[#F86939]"></div>
+                                <span class="text-[12px] text-[#F86939] font-medium font-sans">Works with Your Stack</span>
+                            </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- 05 -->
-                <div class="spotlight-card group p-8 lg:p-12 rounded-sm [animation:animationIn_0.8s_ease-out_0.6s_both] animate-on-scroll animate" style="--mouse-x: 13.671875px; --mouse-y: -1247.75px;">
-                    <span class="absolute top-8 right-8 text-[11px] font-mono text-white/20 font-sans" style="">05</span>
-                    <div class="relative z-10 flex flex-col h-full justify-between gap-16">
-                        <div class="w-12 h-12 bg-white/[0.03] border border-white/5 flex items-center justify-center text-white/90 rounded-sm group-hover:scale-110 transition-transform duration-500">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="refresh-cw" class="lucide lucide-refresh-cw w-6 h-6 stroke-[1.5]"><path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8"></path><path d="M21 3v5h-5"></path><path d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16"></path><path d="M8 16H3v5"></path></svg>
+                <!-- 03: Strategic Roadmapping -->
+                <div class="spotlight-card group p-8 lg:p-12 rounded-sm [animation:animationIn_0.8s_ease-out_0.4s_both] animate-on-scroll animate relative overflow-hidden cursor-pointer" style="--mouse-x: 0px; --mouse-y: 0px;">
+                    <div class="absolute inset-0 bg-gradient-to-br from-[#F86939]/0 via-[#F86939]/0 to-[#F86939]/0 group-hover:from-[#F86939]/5 group-hover:via-[#F86939]/10 group-hover:to-[#F86939]/5 transition-all duration-700 opacity-0 group-hover:opacity-100"></div>
+                    
+                    <span class="absolute top-6 right-6 text-[11px] font-mono text-white/20 group-hover:text-[#F86939] transition-colors duration-300 font-sans z-20">03</span>
+                    
+                    <div class="relative z-10 flex flex-col h-full justify-between gap-8">
+                        <div class="relative">
+                            <div class="w-14 h-14 bg-white/[0.03] border border-white/5 group-hover:border-[#F86939]/30 flex items-center justify-center text-white/90 rounded-sm group-hover:scale-110 group-hover:bg-[#F86939]/10 transition-all duration-500 relative overflow-hidden">
+                                <div class="absolute inset-0 bg-[#F86939] opacity-0 group-hover:opacity-20 blur-xl transition-opacity duration-500"></div>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="trending-up" class="lucide lucide-trending-up w-7 h-7 stroke-[1.5] relative z-10 group-hover:text-[#F86939] transition-colors duration-300"><path d="M16 7h6v6"></path><path d="m22 7-8.5 8.5-5-5L2 17"></path></svg>
+                            </div>
+                            <div class="absolute inset-0 rounded-sm border border-[#F86939]/0 group-hover:border-[#F86939]/20 group-hover:animate-ping"></div>
                         </div>
-                        <div class="">
-                            <h3 class="text-xl text-white mb-3 font-serif italic tracking-wide font-sans" style="">Continuous Learning</h3>
-                            <p class="text-[14px] text-white/50 leading-relaxed font-sans" style="">Automated feedback loops that refine model output accuracy based on user interactions and new data ingestion.</p>
+                        
+                        <div class="space-y-3">
+                            <h3 class="text-xl lg:text-2xl text-white mb-2 font-serif italic tracking-wide group-hover:text-[#F86939] transition-colors duration-300 font-sans">Growth-Focused Roadmap</h3>
+                            <p class="text-[14px] lg:text-[15px] text-white/50 leading-relaxed group-hover:text-white/70 transition-colors duration-300 font-sans">
+                                Get a clear, actionable plan that prioritizes AI initiatives by impact and feasibility. We map your AI journey to your business goals, showing exactly how each step drives revenue, cuts costs, or improves customer satisfaction.
+                            </p>
+                            <div class="flex items-center gap-2 pt-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                <div class="w-1.5 h-1.5 rounded-full bg-[#F86939]"></div>
+                                <span class="text-[12px] text-[#F86939] font-medium font-sans">90-Day Milestones</span>
+                            </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- 06 -->
-                <div class="spotlight-card group p-8 lg:p-12 rounded-sm [animation:animationIn_0.8s_ease-out_0.7s_both] animate-on-scroll animate" style="--mouse-x: -409.6640625px; --mouse-y: -1247.75px;">
-                    <span class="absolute top-8 right-8 text-[11px] font-mono text-white/20 font-sans" style="">06</span>
-                    <div class="relative z-10 flex flex-col h-full justify-between gap-16">
-                        <div class="w-12 h-12 bg-white/[0.03] border border-white/5 flex items-center justify-center text-white/90 rounded-sm group-hover:scale-110 transition-transform duration-500">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="lock" class="lucide lucide-lock w-6 h-6 stroke-[1.5]"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+                <!-- 04: Vector Embedding -->
+                <div class="spotlight-card group p-8 lg:p-12 rounded-sm [animation:animationIn_0.8s_ease-out_0.5s_both] animate-on-scroll animate relative overflow-hidden cursor-pointer" style="--mouse-x: 0px; --mouse-y: 0px;">
+                    <div class="absolute inset-0 bg-gradient-to-br from-[#F86939]/0 via-[#F86939]/0 to-[#F86939]/0 group-hover:from-[#F86939]/5 group-hover:via-[#F86939]/10 group-hover:to-[#F86939]/5 transition-all duration-700 opacity-0 group-hover:opacity-100"></div>
+                    
+                    <span class="absolute top-6 right-6 text-[11px] font-mono text-white/20 group-hover:text-[#F86939] transition-colors duration-300 font-sans z-20">04</span>
+                    
+                    <div class="relative z-10 flex flex-col h-full justify-between gap-8">
+                        <div class="relative">
+                            <div class="w-14 h-14 bg-white/[0.03] border border-white/5 group-hover:border-[#F86939]/30 flex items-center justify-center text-white/90 rounded-sm group-hover:scale-110 group-hover:bg-[#F86939]/10 transition-all duration-500 relative overflow-hidden">
+                                <div class="absolute inset-0 bg-[#F86939] opacity-0 group-hover:opacity-20 blur-xl transition-opacity duration-500"></div>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="database" class="lucide lucide-database w-7 h-7 stroke-[1.5] relative z-10 group-hover:text-[#F86939] transition-colors duration-300"><ellipse cx="12" cy="5" rx="9" ry="3"></ellipse><path d="M3 5V19A9 3 0 0 0 21 19V5"></path><path d="M3 12A9 3 0 0 0 21 12"></path></svg>
+                            </div>
+                            <div class="absolute inset-0 rounded-sm border border-[#F86939]/0 group-hover:border-[#F86939]/20 group-hover:animate-ping"></div>
                         </div>
-                        <div class="">
-                            <h3 class="text-xl text-white mb-3 font-serif italic tracking-wide font-sans" style="">Security Protocol</h3>
-                            <p class="text-[14px] text-white/50 leading-relaxed font-sans" style="">Enterprise-grade encryption and PII masking layers to ensure data sovereignty while leveraging public LLMs.</p>
+                        
+                        <div class="space-y-3">
+                            <h3 class="text-xl lg:text-2xl text-white mb-2 font-serif italic tracking-wide group-hover:text-[#F86939] transition-colors duration-300 font-sans">Intelligent Search & Discovery</h3>
+                            <p class="text-[14px] lg:text-[15px] text-white/50 leading-relaxed group-hover:text-white/70 transition-colors duration-300 font-sans">
+                                Transform your documents, knowledge base, and customer data into a searchable AI-powered system. Employees find answers instantly, customers get better support, and you unlock value from data that's been sitting unused.
+                            </p>
+                            <div class="flex items-center gap-2 pt-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                <div class="w-1.5 h-1.5 rounded-full bg-[#F86939]"></div>
+                                <span class="text-[12px] text-[#F86939] font-medium font-sans">Instant Results</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 05: Continuous Learning -->
+                <div class="spotlight-card group p-8 lg:p-12 rounded-sm [animation:animationIn_0.8s_ease-out_0.6s_both] animate-on-scroll animate relative overflow-hidden cursor-pointer" style="--mouse-x: 0px; --mouse-y: 0px;">
+                    <div class="absolute inset-0 bg-gradient-to-br from-[#F86939]/0 via-[#F86939]/0 to-[#F86939]/0 group-hover:from-[#F86939]/5 group-hover:via-[#F86939]/10 group-hover:to-[#F86939]/5 transition-all duration-700 opacity-0 group-hover:opacity-100"></div>
+                    
+                    <span class="absolute top-6 right-6 text-[11px] font-mono text-white/20 group-hover:text-[#F86939] transition-colors duration-300 font-sans z-20">05</span>
+                    
+                    <div class="relative z-10 flex flex-col h-full justify-between gap-8">
+                        <div class="relative">
+                            <div class="w-14 h-14 bg-white/[0.03] border border-white/5 group-hover:border-[#F86939]/30 flex items-center justify-center text-white/90 rounded-sm group-hover:scale-110 group-hover:bg-[#F86939]/10 transition-all duration-500 relative overflow-hidden">
+                                <div class="absolute inset-0 bg-[#F86939] opacity-0 group-hover:opacity-20 blur-xl transition-opacity duration-500"></div>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="brain" class="lucide lucide-brain w-7 h-7 stroke-[1.5] relative z-10 group-hover:text-[#F86939] transition-colors duration-300"><path d="M12 5a3 3 0 1 0-5.997.142 4 4 0 0 0-2.526 5.77 4 4 0 0 0 .556 6.588 4 4 0 0 0 7.636 2.106 3 3 0 0 0 .164-.546 4 4 0 0 0 2.526-5.77 4 4 0 0 0-.556-6.588A4 4 0 0 0 12 5Z"></path><path d="M12 5a3 3 0 1 1 5.997.142 4 4 0 0 1 2.526 5.77 4 4 0 0 1-.556 6.588 4 4 0 0 1-7.636 2.106 3 3 0 0 1-.164-.546 4 4 0 0 1-2.526-5.77 4 4 0 0 1 .556-6.588A4 4 0 0 1 12 5Z"></path></svg>
+                            </div>
+                            <div class="absolute inset-0 rounded-sm border border-[#F86939]/0 group-hover:border-[#F86939]/20 group-hover:animate-ping"></div>
+                        </div>
+                        
+                        <div class="space-y-3">
+                            <h3 class="text-xl lg:text-2xl text-white mb-2 font-serif italic tracking-wide group-hover:text-[#F86939] transition-colors duration-300 font-sans">Self-Improving AI Systems</h3>
+                            <p class="text-[14px] lg:text-[15px] text-white/50 leading-relaxed group-hover:text-white/70 transition-colors duration-300 font-sans">
+                                Your AI gets smarter with every interaction. We build systems that learn from user feedback, adapt to changing business needs, and continuously improve accuracy—so your investment compounds over time, not depreciates.
+                            </p>
+                            <div class="flex items-center gap-2 pt-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                <div class="w-1.5 h-1.5 rounded-full bg-[#F86939]"></div>
+                                <span class="text-[12px] text-[#F86939] font-medium font-sans">Auto-Optimization</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 06: Security Protocol -->
+                <div class="spotlight-card group p-8 lg:p-12 rounded-sm [animation:animationIn_0.8s_ease-out_0.7s_both] animate-on-scroll animate relative overflow-hidden cursor-pointer" style="--mouse-x: 0px; --mouse-y: 0px;">
+                    <div class="absolute inset-0 bg-gradient-to-br from-[#F86939]/0 via-[#F86939]/0 to-[#F86939]/0 group-hover:from-[#F86939]/5 group-hover:via-[#F86939]/10 group-hover:to-[#F86939]/5 transition-all duration-700 opacity-0 group-hover:opacity-100"></div>
+                    
+                    <span class="absolute top-6 right-6 text-[11px] font-mono text-white/20 group-hover:text-[#F86939] transition-colors duration-300 font-sans z-20">06</span>
+                    
+                    <div class="relative z-10 flex flex-col h-full justify-between gap-8">
+                        <div class="relative">
+                            <div class="w-14 h-14 bg-white/[0.03] border border-white/5 group-hover:border-[#F86939]/30 flex items-center justify-center text-white/90 rounded-sm group-hover:scale-110 group-hover:bg-[#F86939]/10 transition-all duration-500 relative overflow-hidden">
+                                <div class="absolute inset-0 bg-[#F86939] opacity-0 group-hover:opacity-20 blur-xl transition-opacity duration-500"></div>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="shield-check" class="lucide lucide-shield-check w-7 h-7 stroke-[1.5] relative z-10 group-hover:text-[#F86939] transition-colors duration-300"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"></path><path d="m9 12 2 2 4-4"></path></svg>
+                            </div>
+                            <div class="absolute inset-0 rounded-sm border border-[#F86939]/0 group-hover:border-[#F86939]/20 group-hover:animate-ping"></div>
+                        </div>
+                        
+                        <div class="space-y-3">
+                            <h3 class="text-xl lg:text-2xl text-white mb-2 font-serif italic tracking-wide group-hover:text-[#F86939] transition-colors duration-300 font-sans">Enterprise Security, Small Business Price</h3>
+                            <p class="text-[14px] lg:text-[15px] text-white/50 leading-relaxed group-hover:text-white/70 transition-colors duration-300 font-sans">
+                                Protect sensitive data while leveraging powerful AI. We implement bank-level encryption, privacy controls, and compliance measures so you can innovate confidently—without risking your reputation or customer trust.
+                            </p>
+                            <div class="flex items-center gap-2 pt-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                <div class="w-1.5 h-1.5 rounded-full bg-[#F86939]"></div>
+                                <span class="text-[12px] text-[#F86939] font-medium font-sans">SOC2 Ready</span>
+                            </div>
                         </div>
                     </div>
                 </div>
