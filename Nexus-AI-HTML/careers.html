@@ -91,6 +91,19 @@ animation: beam-drop 7s cubic-bezier(0.4, 0, 0.2, 1) infinite;
 ::-webkit-scrollbar { width: 4px; }
 ::-webkit-scrollbar-track { background: #000; }
 ::-webkit-scrollbar-thumb { background: #333; border-radius: 2px; }
+/* Apple Glass Effect Navigation */
+.glass-nav {
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    background-color: rgba(2, 2, 2, 0.7);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+@media (max-width: 768px) {
+    .glass-nav {
+        backdrop-filter: blur(10px) saturate(180%);
+        -webkit-backdrop-filter: blur(10px) saturate(180%);
+    }
+}
 </style>
 <meta name="disabled-font-classes" content="font-geist,font-roboto,font-montserrat,font-poppins,font-playfair,font-instrument-serif,font-merriweather,font-bricolage,font-jakarta,font-manrope,font-space-grotesk,font-work-sans,font-pt-serif,font-geist-mono,font-space-mono,font-quicksand,font-nunito,font-oswald,font-dm-sans,font-google-sans-flex">
 <style id="aura-editor-visibility-style">
@@ -122,30 +135,36 @@ animation: beam-drop 7s cubic-bezier(0.4, 0, 0.2, 1) infinite;
             <div class="relative w-px h-full bg-white/[0.03] overflow-hidden"><div class="beam beam-delay-2"></div></div>
         </div>
 
-        <!-- Navigation -->
-        <nav class="relative z-50 border-b border-white/[0.03] backdrop-blur-sm bg-[#020202]/80">
-            <div class="md:px-12 lg:px-24 flex h-20 pr-6 pl-6 items-center justify-between">
-                <a href="index.html" class="flex items-center gap-3 [animation:animationIn_0.8s_ease-out_0s_both] animate-on-scroll animate">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="cpu" class="lucide lucide-cpu w-6 h-6 text-white stroke-[1.5]"><path d="M12 20v2"></path><path d="M12 2v2"></path><path d="M17 20v2"></path><path d="M17 2v2"></path><path d="M2 12h2"></path><path d="M2 17h2"></path><path d="M2 7h2"></path><path d="M20 12h2"></path><path d="M20 17h2"></path><path d="M20 7h2"></path><path d="M7 20v2"></path><path d="M7 2v2"></path><rect x="4" y="4" width="16" height="16" rx="2"></rect><rect x="8" y="8" width="8" height="8" rx="1"></rect></svg>
-                    <span class="text-xs font-semibold tracking-[0.15em] uppercase text-white font-sans" style="">RBE AI</span>
+        <!-- Navigation - Sticky with Apple Glass Effect -->
+        <nav class="sticky top-4 z-50 mx-4 md:mx-12 lg:mx-24 mt-4 glass-nav rounded-lg shadow-lg transition-all duration-300">
+            <div class="flex h-14 md:h-16 lg:h-20 px-4 md:px-6 lg:px-8 items-center justify-between max-w-[1400px] mx-auto">
+                <a href="index.html" class="flex items-center gap-2 md:gap-3">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="cpu" class="lucide lucide-cpu w-5 h-5 md:w-6 md:h-6 text-white stroke-[1.5]"><path d="M12 20v2"></path><path d="M12 2v2"></path><path d="M17 20v2"></path><path d="M17 2v2"></path><path d="M2 12h2"></path><path d="M2 17h2"></path><path d="M2 7h2"></path><path d="M20 12h2"></path><path d="M20 17h2"></path><path d="M20 7h2"></path><path d="M7 20v2"></path><path d="M7 2v2"></path><rect x="4" y="4" width="16" height="16" rx="2"></rect><rect x="8" y="8" width="8" height="8" rx="1"></rect></svg>
+                    <span class="text-xs md:text-sm font-semibold tracking-[0.15em] uppercase text-white font-sans">RBE AI</span>
                 </a>
 
-                <div class="hidden md:flex items-center gap-10 [animation:animationIn_0.8s_ease-out_0.1s_both] animate-on-scroll animate">
-                    <a href="services.html" class="text-[13px] hover:text-white transition-colors text-white/60">Services</a>
-                    <a href="case-studies.html" class="text-[13px] hover:text-white transition-colors text-white/60">Case Studies</a>
-                    <a href="careers.html" class="text-[13px] hover:text-white transition-colors text-white/60">Careers</a>
+                <div class="hidden md:flex items-center gap-6 lg:gap-10">
+                    <a href="services.html" class="text-sm lg:text-base hover:text-white transition-colors text-white/70 font-sans">Services</a>
+                    <a href="case-studies.html" class="text-sm lg:text-base hover:text-white transition-colors text-white/70 font-sans">Case Studies</a>
+                    <a href="pricing.html" class="text-sm lg:text-base hover:text-white transition-colors text-white/70 font-sans">Pricing</a>
                 </div>
 
-                <div class="flex items-center gap-6 [animation:animationIn_0.8s_ease-out_0.2s_both] animate-on-scroll animate">
-                    <a href="login.html" class="text-[13px] hover:text-white transition-colors hidden sm:block text-white/60">Client Login</a>
-                    <button class="group inline-flex overflow-hidden transition-all duration-300 hover:-translate-y-0.5 rounded-sm pt-[1px] pr-[1px] pb-[1px] pl-[1px] relative items-center justify-center" onclick="window.location.href='audit.html'" role="button">
-                        <span class="absolute inset-[-100%] animate-[spin_3s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,transparent_0%,transparent_75%,#ffffff_100%)] opacity-0 transition-opacity duration-300 group-hover:opacity-100"></span>
-                        <span class="absolute inset-0 rounded-sm bg-zinc-800 transition-opacity duration-300 group-hover:opacity-0"></span>
-                        <span class="flex items-center justify-center gap-2 transition-colors duration-300 group-hover:text-white text-[16.5px] font-medium text-zinc-300 tracking-tight bg-black w-full h-full rounded-sm pt-3 pr-6 pb-3 pl-6 relative">
-                            <span class="relative z-10 uppercase tracking-widest font-sans" style="">Audit Request</span>
-                        </span>
+                <div class="flex items-center gap-3 md:gap-4 lg:gap-6">
+                    <a href="login.html" class="text-sm lg:text-base hover:text-white transition-colors hidden lg:block text-white/70 font-sans">Client Login</a>
+                    <a href="index.html#qualifying-form" class="group shadow-[#F86939]/20 hover:shadow-[#F86939]/40 transition-all duration-300 overflow-hidden font-medium text-white bg-gradient-to-r from-[#F86939] to-[#FF8A5C] rounded-sm px-4 py-2 md:px-6 md:py-2.5 lg:px-8 lg:py-3 relative shadow-lg text-sm md:text-base font-semibold tracking-tight font-sans" style="box-shadow:0 8px 20px -8px rgba(248,105,57,0.5), inset 0 2px 4px rgba(255,255,255,0.3);">
+                        <div class="group-hover:translate-y-0 transition-transform duration-300 bg-white/40 absolute top-0 right-0 bottom-0 left-0 translate-y-full"></div>
+                        <span class="relative z-10">Get Started</span>
+                    </a>
+                    <button id="mobile-menu-btn" class="md:hidden w-8 h-8 flex items-center justify-center text-white/60 hover:text-white transition-colors">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-menu w-5 h-5"><line x1="4" y1="12" x2="20" y2="12"></line><line x1="4" y1="6" x2="20" y2="6"></line><line x1="4" y1="18" x2="20" y2="18"></line></svg>
                     </button>
                 </div>
+            </div>
+            <div id="mobile-menu" class="hidden md:hidden border-t border-white/10 px-4 py-4 space-y-3">
+                <a href="services.html" class="block text-sm text-white/60 hover:text-white transition-colors font-sans">Services</a>
+                <a href="case-studies.html" class="block text-sm text-white/60 hover:text-white transition-colors font-sans">Case Studies</a>
+                <a href="pricing.html" class="block text-sm text-white/60 hover:text-white transition-colors font-sans">Pricing</a>
+                <a href="login.html" class="block text-sm text-white/60 hover:text-white transition-colors font-sans">Client Login</a>
             </div>
         </nav>
 
@@ -887,6 +906,15 @@ animation: beam-drop 7s cubic-bezier(0.4, 0, 0.2, 1) infinite;
                     card.style.setProperty("--mouse-y", `${y}px`);
                 });
             });
+
+            // Mobile menu toggle
+            const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+            if (mobileMenuBtn && mobileMenu) {
+                mobileMenuBtn.addEventListener('click', function() {
+                    mobileMenu.classList.toggle('hidden');
+                });
+            }
         });
     </script>
 
